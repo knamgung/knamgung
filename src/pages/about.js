@@ -3,16 +3,19 @@ import NavigationBar from "../components/Navbar.js";
 import GlobalFonts from "../fonts/font";
 import styled from "styled-components";
 import Intro from "../components/Intro.js";
+import Experience from "../components/Experience.js";
+import Dance from "../components/Dance.js";
+
+import "../util/styleReset.css";
+
 // styles
 const AboutMain = styled.main`
   color: "#232129";
   width: 100%;
   margin: 0;
-  padding: 0 232px;
-  margin-top: 64px;
-  box-sizing: border-box;
+  padding: 0 320px;
+  flex-flow: column;
   display: flex;
-  font-family: "Spartan";
   @media (max-width: 1280px) {
     padding: 0 112px;
   }
@@ -29,6 +32,8 @@ const AboutPage = () => {
       <GlobalFonts />
       <NavigationBar />
       <Intro></Intro>
+      <Experience></Experience>
+      <Dance></Dance>
     </AboutMain>
   );
 };

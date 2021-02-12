@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Spartan";
+  background-color: #0c1d0c;
+}
+
+*,
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*# sourceMappingURL=styleReset.css.map */

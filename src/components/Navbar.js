@@ -3,10 +3,11 @@ import styled from "styled-components";
 import Github from "../icons/github";
 import Linkedin from "../icons/linkedin";
 import { Link } from "gatsby";
+import { colors } from "../util/Colors";
 
 const Spacer = require("react-spacer");
 const Navigation = styled.div`
-  padding: 0px 240px;
+  padding: 0px 32px;
   position: fixed;
   box-sizing: border-box;
   top: 0;
@@ -15,9 +16,9 @@ const Navigation = styled.div`
   height: 64px;
   display: flex;
   justify-content: space-between;
-  font-family: Spartan;
-  background-color: white;
+  backdrop-filter: blur(6px);
 
+  z-index: 99;
   @media (max-width: 1280px) {
     padding: 0 120px;
   }
@@ -33,7 +34,7 @@ const NavWrapper = styled.div`
 `;
 
 const StyledLink = styled(Link)`
-  color: #606060;
+  color: ${colors.sapGreen};
 
   text-decoration: none;
 `;
@@ -56,28 +57,31 @@ export default class NavigationBar extends Component {
       <Navigation>
         <NavWrapper>
           <Logo>
-            <StyledLink to="/" activeStyle={{ color: "black" }}>
+            <StyledLink to="/" activeStyle={{ color: colors.lightGreen }}>
               KBN
             </StyledLink>
           </Logo>
 
           <Navlink>
-            <StyledLink to="/about" activeStyle={{ color: "black" }}>
+            <StyledLink to="/about" activeStyle={{ color: colors.lightGreen }}>
               about
             </StyledLink>
           </Navlink>
-          <StyledLink
-            to="/projects"
-            activeStyle={{ color: "black" }}
-            partiallyActive={true}
-          >
-            <Navlink>projects</Navlink>
-          </StyledLink>
+
+          <Navlink>
+            <StyledLink
+              to="/projects"
+              activeStyle={{ color: colors.lightGreen }}
+              partiallyActive={true}
+            >
+              projects
+            </StyledLink>
+          </Navlink>
         </NavWrapper>
         <NavWrapper>
-          <Github></Github>
+          <Github className="github"></Github>
           <Spacer width="18px" />
-          <Linkedin></Linkedin>
+          <Linkedin className="linked-in"></Linkedin>
         </NavWrapper>
       </Navigation>
     );

@@ -3,16 +3,15 @@ import NavigationBar from "../components/Navbar.js";
 import GlobalFonts from "../fonts/font";
 import styled from "styled-components";
 import AllProjects from "../components/allProjects.js";
+import "../util/styleReset.css";
+
 // styles
 const MainPage = styled.main`
   color: "#232129";
   width: 100%;
   margin: 0;
-  padding: 0 232px;
-  margin-top: 64px;
-  box-sizing: border-box;
+  padding: 0 320px;
   display: flex;
-  font-family: "Spartan";
   @media (max-width: 1280px) {
     padding: 0 112px;
   }

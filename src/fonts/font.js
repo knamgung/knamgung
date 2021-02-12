@@ -1,10 +1,10 @@
-import { createGlobalStyle } from 'styled-components';
-import SpartanBlack from './Spartan-Black.ttf'
-import SpartanBold from './Spartan-Bold.ttf'
-import SpartanSemiBold from './Spartan-SemiBold.ttf'
-import SpartanMedium from './Spartan-Medium.ttf'
-import SpartanRegular from './Spartan-Regular.ttf'
-import SpartanLight from './Spartan-Light.ttf'
+import { createGlobalStyle } from "styled-components";
+import SpartanBlack from "./Spartan-Black.ttf";
+import SpartanBold from "./Spartan-Bold.ttf";
+import SpartanSemiBold from "./Spartan-SemiBold.ttf";
+import SpartanMedium from "./Spartan-Medium.ttf";
+import SpartanRegular from "./Spartan-Regular.ttf";
+import SpartanLight from "./Spartan-Light.ttf";
 
 export default createGlobalStyle`
     @font-face {

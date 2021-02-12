@@ -2,14 +2,13 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import resume from "../resources/resume.pdf";
 import me from "../images/me.jpg";
+import { colors } from "../util/Colors";
 
 const AboutDiv = styled.div`
-  font-family: "Spartan";
-  height: 600px;
   width: 100%;
   display: flex;
   flex-flow: column;
-  margin-top: 120px;
+  margin-top: 180px;
   @media (max-width: 1280px) {
   }
 
@@ -19,13 +18,13 @@ const AboutDiv = styled.div`
 const Heading = styled.h1`
   font-weight: 900;
   font-size: 32px;
-  color: Black;
+  color: ${colors.whiteGreen};
 `;
 
 const Description = styled.p`
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
-  color: Black;
+  color: ${colors.lightGreen};
   line-height: 32px;
   margin-top: 24px;
 `;
@@ -34,24 +33,24 @@ const DescDiv = styled.div`
   width: 65%;
 `;
 const AltHeading = styled(Heading)`
-  color: white;
   padding: 0;
   margin: 0;
+  padding-top: 4px;
 `;
 
 const ResumeLink = styled.a`
   width: 240px;
-  color: #5ab4ff;
+  color: ${colors.hyperlink};
   text-decoration: none;
   font-weight: 700;
 `;
 const HeadingBox = styled.div`
   width: 18.5%;
   padding: 8px 12px;
-  background-color: black;
-  height: 32px;
+  background-color: ${colors.sapGreen};
+  display: flex;
+  align-items: center;
   margin-bottom: 32px;
-
   @media (max-width: 768px) {
     width: 100%;
 
@@ -62,26 +61,11 @@ const HeadingBox = styled.div`
 
 const AboutInfo = styled.div`
   display: flex;
-
-  justify-content: space-between;
-`;
-const DanceVideoBox = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 32px;
-  width: 100%;
-  background-color: #5ab4ff;
-  padding: 8px 12px;
-
-  height: 32px;
-`;
-
-const SubHeader = styled(AltHeading)`
-  font-size: 20px;
 `;
 
 const MyImage = styled.div`
   width: 200px;
+  margin-left: 80px;
   background-image: url(${me});
   background-size: contain;
   background-repeat: no-repeat;
@@ -118,9 +102,6 @@ export default class Intro extends Component {
         <ResumeLink href={resume}>
           <p>Check out my resume!</p>
         </ResumeLink>
-        <DanceVideoBox>
-          <SubHeader>Curious about my dancing?</SubHeader>
-        </DanceVideoBox>
       </AboutDiv>
     );
   }

@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { colors } from "../util/Colors";
 
 const AllProjectDiv = styled.div`
-  font-family: "Spartan";
   height: 600px;
   width: 100%;
   display: flex;
   flex-flow: column;
-  margin-top: 120px;
+  margin-top: 180px;
   @media (max-width: 1280px) {
   }
 
@@ -20,13 +20,16 @@ const FilterButton = styled.button`
   width: 100px;
   height: 30px;
   border: none;
-  background-color: #5ab4ff;
-  color: white;
+  background-color: ${(props) =>
+    props.active ? `${colors.lightGreen}` : `${colors.mediumGreen}`};
+  color: ${(props) =>
+    props.active ? `${colors.darkGreen}` : `${colors.lightGreen}`};
   border-radius: 20px;
   outline: none;
   font-family: "Spartan";
   font-weight: 600;
   padding-top: 5px;
+  cursor: pointer;
 `;
 
 const FilterButtonDiv = styled.div`
@@ -38,7 +41,8 @@ const FilterButtonDiv = styled.div`
 const Heading = styled.h1`
   font-weight: 700;
   font-size: 32px;
-  color: Black;
+  color: ${colors.whiteGreen};
+  margin-top: 0;
 `;
 
 const ProjectAll = styled.div`
@@ -54,10 +58,12 @@ const ProjectAll = styled.div`
 
 const ProjectDiv = styled.div`
   width: 48%;
-  height: 120px;
-  background-color: white;
+  height: 180px;
+  background-color: ${colors.sapGreen};
+  margin: 24px 0;
   -webkit-box-shadow: 9px 9px 17px 2px rgba(0, 0, 0, 0.13);
   box-shadow: 9px 9px 17px 2px rgba(0, 0, 0, 0.13);
+
   @media (max-width: 1280px) {
   }
 
@@ -71,23 +77,23 @@ const ProjectTitleDiv = styled.div`
   align-items: flex-end;
   justify-content: space-between;
   height: 48px;
-  background-color: #5ab4ff;
-  padding: 4px 10px;
+  background-color: ${colors.mediumGreen};
+  padding: 10px 20px;
 `;
 const ProjecTitle = styled.h1`
   color: white;
   font-weight: 600;
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
 `;
 
 const ProjectDescrDiv = styled.div`
-  padding: 0px 10px;
+  padding: 10px 20px;
 `;
 
 const ProjectDescr = styled.p`
   font-size: 12px;
-  color: black;
+  color: white;
 `;
 
 const ProjectTagDiv = styled.div``;
@@ -115,48 +121,81 @@ const StyledLink = styled(Link)`
 const allProjectData = [
   {
     title: "Subtle",
-    subject: ["CODE"],
+    subject: "CODE",
     description:
       "BrainStation Capstone Project: a machine-learning application that analyzes poses in photographs to provide a summary of repetitive gestures",
   },
   {
-    title: "Subtle",
-    subject: ["CODE"],
+    title: "Pooler",
+    subject: "CODE",
     description:
-      "BrainStation Capstone Project: a machine-learning application that analyzes poses in photographs to provide a summary of repetitive gestures",
+      "Pooler is a mobile rideshare application that provides passengers with consistent reliable rides, and drivers with solution to cost calculation and payment receiving capabilities.",
+  },
+  {
+    title: "AWAIR",
+    subject: "DESIGN",
+    description:
+      "RSA Student Design Project: AWAIR is an art exhibiton designed to empower citizens to make meaningful change through education about air quality",
   },
 ];
 export default class AllProjects extends Component {
+  state = {
+    projectFilter: "ALL",
+  };
   renderProjects = () => {
-    return allProjectData.map((project) => {
-      const { title, subject, description } = project;
-      return (
-        <ProjectDiv>
-          <StyledLink to={`${title}`}>
-            <ProjectTitleDiv>
-              <ProjecTitle>{title}</ProjecTitle>
-              <ProjectTagDiv>
-                <ProjectTag>
-                  <ProjectTagName>{subject[0]}</ProjectTagName>
-                </ProjectTag>
-              </ProjectTagDiv>
-            </ProjectTitleDiv>
-            <ProjectDescrDiv>
-              <ProjectDescr>{description}</ProjectDescr>
-            </ProjectDescrDiv>
-          </StyledLink>
-        </ProjectDiv>
-      );
-    });
+    return allProjectData
+      .filter((project) => {
+        if (this.state.projectFilter !== "ALL") {
+          return this.state.projectFilter === project.subject;
+        } else {
+          return true;
+        }
+      })
+      .map((project) => {
+        const { title, subject, description } = project;
+        return (
+          <ProjectDiv>
+            <StyledLink to={`${title}`}>
+              <ProjectTitleDiv>
+                <ProjecTitle>{title}</ProjecTitle>
+                <ProjectTagDiv>
+                  <ProjectTag>
+                    <ProjectTagName>{subject}</ProjectTagName>
+                  </ProjectTag>
+                </ProjectTagDiv>
+              </ProjectTitleDiv>
+              <ProjectDescrDiv>
+                <ProjectDescr>{description}</ProjectDescr>
+              </ProjectDescrDiv>
+            </StyledLink>
+          </ProjectDiv>
+        );
+      });
   };
   render() {
+    const { projectFilter } = this.state;
     return (
       <AllProjectDiv>
         <Heading>Projects</Heading>
         <FilterButtonDiv>
-          <FilterButton>ALL</FilterButton>
-          <FilterButton>DESIGN</FilterButton>
-          <FilterButton>DEVELOP</FilterButton>
+          <FilterButton
+            active={projectFilter === "ALL"}
+            onClick={() => this.setState({ projectFilter: "ALL" })}
+          >
+            ALL
+          </FilterButton>
+          <FilterButton
+            active={projectFilter === "DESIGN"}
+            onClick={() => this.setState({ projectFilter: "DESIGN" })}
+          >
+            DESIGN
+          </FilterButton>
+          <FilterButton
+            active={projectFilter === "CODE"}
+            onClick={() => this.setState({ projectFilter: "CODE" })}
+          >
+            CODE
+          </FilterButton>
         </FilterButtonDiv>
         <ProjectAll>{this.renderProjects()}</ProjectAll>
       </AllProjectDiv>
