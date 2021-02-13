@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import NavigationBar from "../../components/Navbar.js";
-import GlobalFonts from "../../fonts/font";
 import styled from "styled-components";
 import heading from "../../images/Pooler/heading.png";
 import first from "../../images/Pooler/first.png";
@@ -319,7 +318,6 @@ export default class Pooler extends Component {
     return (
       <>
         <MainPage>
-          <GlobalFonts />
           <NavigationBar></NavigationBar>
           <SubtleDiv>
             <ProjectHeader>

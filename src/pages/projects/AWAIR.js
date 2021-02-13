@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import NavigationBar from "../../components/Navbar.js";
-import GlobalFonts from "../../fonts/font";
 import styled from "styled-components";
 import intro from "../../images/AWAIR/intro.png";
 import logo from "../../images/AWAIR/logo.png";
@@ -565,7 +564,6 @@ export default class AWAIR extends Component {
     return (
       <>
         <MainPage>
-          <GlobalFonts />
           <NavigationBar></NavigationBar>
           <SubtleDiv>
             <ProjectHeader>

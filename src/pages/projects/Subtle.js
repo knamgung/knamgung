@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import NavigationBar from "../../components/Navbar.js";
-import GlobalFonts from "../../fonts/font";
 import styled from "styled-components";
 import preview from "../../images/subtle/subtle-preview.png";
 import problemSpace from "../../images/subtle/problem-space.png";
@@ -249,7 +248,6 @@ export default class Subtle extends Component {
     return (
       <>
         <MainPage>
-          <GlobalFonts />
           <NavigationBar></NavigationBar>
           <SubtleDiv>
             <ProjectHeader>
