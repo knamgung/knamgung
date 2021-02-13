@@ -1,6 +1,5 @@
 import * as React from "react";
 import NavigationBar from "../components/Navbar.js";
-import GlobalFonts from "../fonts/font";
 import styled from "styled-components";
 import AllProjects from "../components/allProjects.js";
 import "../util/styleReset.css";
@@ -25,7 +24,6 @@ const MainPage = styled.main`
 const IndexPage = () => {
   return (
     <MainPage>
-      <GlobalFonts />
       <NavigationBar />
       <AllProjects></AllProjects>
     </MainPage>

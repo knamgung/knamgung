@@ -1,6 +1,5 @@
 import * as React from "react";
 import NavigationBar from "../components/Navbar.js";
-import GlobalFonts from "../fonts/font";
 import styled from "styled-components";
 import Main from "../components/Main.js";
 import "../util/styleReset.css";
@@ -33,7 +32,6 @@ const Author = styled.p`
 const IndexPage = () => {
   return (
     <MainPage>
-      <GlobalFonts />
       <NavigationBar />
       <Main></Main>
       <Author>

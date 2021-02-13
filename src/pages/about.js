@@ -1,6 +1,5 @@
 import * as React from "react";
 import NavigationBar from "../components/Navbar.js";
-import GlobalFonts from "../fonts/font";
 import styled from "styled-components";
 import Intro from "../components/Intro.js";
 import Experience from "../components/Experience.js";
@@ -29,7 +28,6 @@ const AboutMain = styled.main`
 const AboutPage = () => {
   return (
     <AboutMain>
-      <GlobalFonts />
       <NavigationBar />
       <Intro></Intro>
       <Experience></Experience>
