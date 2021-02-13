@@ -16,6 +16,7 @@ const MainDiv = styled.div`
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: 60%;
+  font-family: "Spartan", sans-serif;
 
   @media (max-width: 1280px) {
     background-size: contain;

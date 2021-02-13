@@ -10,6 +10,8 @@ const MainPage = styled.main`
   width: 100%;
   margin: 0;
   padding: 0 320px;
+  font-family: "Spartan", sans-serif;
+
   margin-top: 64px;
 
   @media (max-width: 1280px) {

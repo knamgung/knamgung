@@ -11,6 +11,8 @@ const MainPage = styled.main`
   margin: 0;
   padding: 0 320px;
   display: flex;
+  font-family: "Spartan", sans-serif;
+
   @media (max-width: 1280px) {
     padding: 0 112px;
   }

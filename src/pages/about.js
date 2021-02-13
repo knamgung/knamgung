@@ -15,6 +15,8 @@ const AboutMain = styled.main`
   padding: 0 320px;
   flex-flow: column;
   display: flex;
+  font-family: "Spartan", sans-serif;
+
   @media (max-width: 1280px) {
     padding: 0 112px;
   }
