@@ -39,6 +39,7 @@ const IndexPage = () => {
       <Author>
         Designed & Made by Bean Namgung
         <span role="img" aria-label="plant-emoji">
+          {" "}
           🌱
         </span>
       </Author>
