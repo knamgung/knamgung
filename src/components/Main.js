@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import resume from "../resources/resume.pdf";
 
 import hero from "../images/hero-green.png";
 import Anime from "react-anime";
@@ -15,15 +16,11 @@ const MainDiv = styled.div`
   background-image: url(${hero});
   background-repeat: no-repeat;
   background-position: right bottom;
-  background-size: 60%;
+  background-size: 55%;
   font-family: "Spartan", sans-serif;
 
-  @media (max-width: 1280px) {
-    background-size: contain;
-  }
-
   @media (max-width: 768px) {
-    background-size: contain;
+    background-size: 65%;
   }
 `;
 const Heading = styled.h1`
@@ -48,6 +45,9 @@ const HeroIntro = styled.p`
   font-size: 14px;
   line-height: 20px;
   color: ${colors.lightGreen};
+  @media (max-width: 1280px) {
+    width: 65%;
+  }
 `;
 const HeadingBox = styled.div`
   padding: 12px;
@@ -68,34 +68,44 @@ const IntroMessage = styled.p`
   font-weight: 100;
 `;
 
+const IntroSpan = styled.span`
+  color: ${colors.whiteGreen};
+`;
+
+const BioButton = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 64px;
+  link-style: none;
+  text-decoration: none;
+  font-weight: 700;
+
+  border: 2px ${colors.lightGreen} solid;
+`;
+
+const ButtonTitle = styled.a`
+  font-size: 18px;
+  font-family: "Spartan";
+  color: ${colors.lightGreen};
+`;
 export default class Main extends Component {
   render() {
     return (
       <>
         <MainDiv>
-          <Anime
-            easing="easeInOutExpo"
-            duration={1000}
-            autoplay={true}
-            direction="normal"
-            delay={(el, index) => index * 240}
-            scale={[0.8, 1]}
-            elasticity={50}
-          >
-            <IntroMessage>Hello~ My name is</IntroMessage>
-            <Heading>Bean Namgung</Heading>
-            <HeroIntro>
-              My name is Ken, and I am a graduate of a Web Development program
-              and a current interactive design student. Throughout my time at
-              Waterloo, I have been exposed to disciplines within the tech
-              industry that entice my interests.
-            </HeroIntro>
-            <HeadingBox>
-              <AltHeading>
-                Building Solutions to Solve Human Problems
-              </AltHeading>
-            </HeadingBox>
-          </Anime>
+          <IntroMessage>Hello~ My name is</IntroMessage>
+          <Heading>Bean Namgung</Heading>
+          <HeroIntro>
+            I am a React developer based in Vancouver, BC pursuing to build
+            <IntroSpan> beautiful</IntroSpan>,<IntroSpan> responsive</IntroSpan>
+            , and
+            <IntroSpan> user-friendly</IntroSpan> application.
+          </HeroIntro>
+          <BioButton href={resume} target="_blank">
+            <ButtonTitle>Resume</ButtonTitle>
+          </BioButton>
         </MainDiv>
       </>
     );
