@@ -3,8 +3,8 @@ import styled from "styled-components";
 import resume from "../resources/resume.pdf";
 
 import hero from "../images/hero-green.png";
-import Anime from "react-anime";
 import { colors } from "../util/Colors";
+import Fade from "react-reveal/Fade";
 
 const MainDiv = styled.div`
   height: 600px;
@@ -90,23 +90,43 @@ const ButtonTitle = styled.a`
   font-family: "Spartan";
   color: ${colors.lightGreen};
 `;
+
+const Author = styled.p`
+  margin-top: 180px;
+  text-align: center;
+  color: ${colors.lightGreen};
+  font-size: 12px;
+`;
 export default class Main extends Component {
   render() {
     return (
       <>
         <MainDiv>
-          <IntroMessage>Hello~ My name is</IntroMessage>
-          <Heading>Bean Namgung</Heading>
-          <HeroIntro>
-            I am a React developer based in Vancouver, BC pursuing to build
-            <IntroSpan> beautiful</IntroSpan>,<IntroSpan> responsive</IntroSpan>
-            , and
-            <IntroSpan> user-friendly</IntroSpan> application.
-          </HeroIntro>
-          <BioButton href={resume} target="_blank">
-            <ButtonTitle>Resume</ButtonTitle>
-          </BioButton>
+          <Fade cascade duration={3000}>
+            <IntroMessage>Hello~ My name is</IntroMessage>
+          </Fade>
+          <Fade left cascade duration={1000}>
+            <Heading>Bean Namgung</Heading>
+            <HeroIntro>
+              I am a React developer based in Vancouver, BC pursuing to build
+              <IntroSpan> beautiful</IntroSpan>,
+              <IntroSpan> responsive</IntroSpan>, and
+              <IntroSpan> user-friendly</IntroSpan> application.
+            </HeroIntro>
+            <BioButton href={resume} target="_blank">
+              <ButtonTitle>Resume</ButtonTitle>
+            </BioButton>
+          </Fade>
         </MainDiv>
+        <Fade bottom delay={2000}>
+          <Author>
+            Designed & Made by Bean Namgung
+            <span role="img" aria-label="plant-emoji">
+              {" "}
+              🌱
+            </span>
+          </Author>
+        </Fade>
       </>
     );
   }

@@ -23,26 +23,12 @@ const MainPage = styled.main`
   }
 `;
 
-const Author = styled.p`
-  text-align: center;
-  margin-top: 200px;
-  color: ${colors.lightGreen};
-  font-size: 12px;
-`;
-
 // markup
 const IndexPage = () => {
   return (
     <MainPage>
       <NavigationBar />
       <Main></Main>
-      <Author>
-        Designed & Made by Bean Namgung
-        <span role="img" aria-label="plant-emoji">
-          {" "}
-          🌱
-        </span>
-      </Author>
     </MainPage>
   );
 };
