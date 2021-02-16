@@ -314,6 +314,7 @@ const EachSolution = styled.div`
   justify-content: space-between;
   height: 300px;
   margin-top: 50px;
+  width: 100%;
 
   @media (max-width: 1280px) {
     flex-flow: column;
@@ -354,6 +355,10 @@ const FinalVideo = styled(Vimeo)`
   display: flex;
   justify-content: center;
   width: 100%;
+
+  @media (max-width: 768px;) {
+    width: 300px;
+  }
 `;
 const AllSolutions = styled.div`
   display: flex;
@@ -361,12 +366,12 @@ const AllSolutions = styled.div`
   align-items: center;
 
   @media (max-width: 1280px) {
-    padding: 0 120px;
+    padding: 0 64px;
     margin-top: 32px;
   }
 
   @media (max-width: 768px) {
-    padding: 0 64px;
+    padding: 0 0;
   }
 `;
 
@@ -379,6 +384,7 @@ const BigHeroSection = styled.div`
 const BigHeroImagesWrap = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   @media (max-width: 768px) {
     flex-flow: column;
     align-items: center;
@@ -386,6 +392,8 @@ const BigHeroImagesWrap = styled.div`
 `;
 const BigHeroImages = styled.img`
   width: 49%;
+  object-fit: contain;
+  max-height: 500px;
   @media (max-width: 768px) {
     margin: 12px 0;
     width: 80%;
@@ -416,19 +424,24 @@ const Boards = styled.div`
   display: flex;
   flex-flow: wrap;
   width: 45%;
-
+  align-items: flex-start;
   justify-content: space-between;
   background-color: ${colors.mediumGreen};
+
   padding: 12px 20px;
   @media (max-width: 768px) {
     margin-top: 64px;
+
     width: 80%;
+    max-height: 100%;
   }
 `;
 
 const EachBoard = styled.img`
   width: 49%;
   margin: 8px 0;
+  max-height: 200px;
+  object-fit: contain;
 `;
 
 const ViewBoardButton = styled.a`
@@ -456,7 +469,7 @@ const BMCSection = styled.div`
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
-
+  align-items: flex-start;
   @media (max-width: 768px) {
     flex-flow: column;
     align-items: center;
@@ -471,6 +484,9 @@ const BMCLinks = styled.div`
 
 const BMCImage = styled.img`
   width: 50%;
+  object-fit: contain;
+
+  max-height: 500px;
   @media (max-width: 768px) {
     margin-top: 64px;
     width: 80%;

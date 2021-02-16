@@ -203,7 +203,7 @@ const BrainstormSection = styled.div`
 
 const BrainSub = styled.div`
   background-color: ${colors.mediumGreen};
-  height: 80px;
+
   display: flex;
   text-align: center;
   margin-top: 52px;
@@ -232,11 +232,21 @@ const BrainDesc = styled.div`
   }
 `;
 
+const BrainstormImg = styled.img`
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
 const TitleBox = styled.div`
   padding: 8px 12px;
   background-color: ${colors.sapGreen};
 
   width: 50%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  } ;
 `;
 
 const Development = styled(Ideation)``;
@@ -252,6 +262,7 @@ const DevelopSection = styled.div`
 `;
 
 const DevelopImg = styled.img`
+  width: 40%;
   @media (max-width: 1280px) {
     width: 70%;
   }
@@ -273,6 +284,9 @@ const DevelopGrey = styled.div`
   background-color: ${colors.mediumGreen};
   height: 200px;
   padding: 8px 24px;
+  @media (max-width: 1280px) {
+    width: auto;
+  }
 `;
 
 const DevelopSecDesc = styled(SectionDescription)`
@@ -285,7 +299,7 @@ const DevelopSecDesc = styled(SectionDescription)`
 `;
 
 const Footer = styled.div`
-  background-color: black;
+  background-color: ${colors.sapGreen};
   display: flex;
   flex-flow: Column;
   align-items: center;
@@ -392,7 +406,10 @@ export default class Pooler extends Component {
                 <AltSectionTitle>Brainstorm + First Iteration</AltSectionTitle>
               </TitleBox>
               <BrainstormSection>
-                <img alt="first-iteration-design" src={first}></img>
+                <BrainstormImg
+                  alt="first-iteration-design"
+                  src={first}
+                ></BrainstormImg>
                 <BrainDesc>
                   <SectionDescription>
                     Kevin tackled the design for this project. For our first
