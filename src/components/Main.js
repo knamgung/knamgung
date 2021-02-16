@@ -30,14 +30,6 @@ const Heading = styled.h1`
   margin: 0;
 `;
 
-const AltHeading = styled(Heading)`
-  color: ${colors.whiteGreen};
-  font-size: 32px;
-  font-weight: 600;
-  padding: 0;
-  margin: 0;
-`;
-
 const HeroIntro = styled.p`
   font-family: "IBM Plex Mono", monospace;
   margin-bottom: 40px;
@@ -47,17 +39,6 @@ const HeroIntro = styled.p`
   color: ${colors.lightGreen};
   @media (max-width: 1280px) {
     width: 65%;
-  }
-`;
-const HeadingBox = styled.div`
-  padding: 12px;
-  width: 70.5%;
-  backdrop-filter: blur(4px);
-
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 8px 0px;
-    padding-left: 8px;
   }
 `;
 
@@ -81,21 +62,42 @@ const BioButton = styled.a`
   link-style: none;
   text-decoration: none;
   font-weight: 700;
-
   border: 2px ${colors.lightGreen} solid;
+
+  &:hover {
+    transition: 0.25s;
+    background-color: ${colors.mediumGreen};
+  }
 `;
 
-const ButtonTitle = styled.a`
-  font-size: 18px;
+const ButtonTitle = styled.h5`
+  font-size: 14px;
   font-family: "Spartan";
   color: ${colors.lightGreen};
 `;
 
-const Author = styled.p`
-  margin-top: 180px;
+const Author = styled.a`
   text-align: center;
+
+  link-style: none;
+  text-decoration: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 180px;
+  cursor: default;
+`;
+
+const AuthorText = styled.p`
   color: ${colors.lightGreen};
+
   font-size: 12px;
+  cursor: pointer;
+
+  &:hover {
+    color: ${colors.whiteGreen};
+    transition: 1s;
+  }
 `;
 export default class Main extends Component {
   render() {
@@ -113,18 +115,24 @@ export default class Main extends Component {
               <IntroSpan> responsive</IntroSpan>, and
               <IntroSpan> user-friendly</IntroSpan> application.
             </HeroIntro>
-            <BioButton href={resume} target="_blank">
-              <ButtonTitle>Resume</ButtonTitle>
+            <BioButton href={resume} target="_blank" rel="noopener">
+              <ButtonTitle>My Resume</ButtonTitle>
             </BioButton>
           </Fade>
         </MainDiv>
         <Fade bottom delay={2000}>
-          <Author>
-            Designed & Made by Bean Namgung
-            <span role="img" aria-label="plant-emoji">
-              {" "}
-              🌱
-            </span>
+          <Author
+            href="https://github.com/knamgung/knamgung"
+            rel="noopener"
+            target="_blank"
+          >
+            <AuthorText>
+              Designed & Made by Bean Namgung
+              <span role="img" aria-label="plant-emoji">
+                {" "}
+                🌱
+              </span>
+            </AuthorText>
           </Author>
         </Fade>
       </>

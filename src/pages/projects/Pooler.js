@@ -484,6 +484,7 @@ export default class Pooler extends Component {
             Check it out on {` `}
             <FooterGit
               target="_blank"
+              rel="noopener"
               href={`https://github.com/knamgung/pooler`}
             >
               GitHub

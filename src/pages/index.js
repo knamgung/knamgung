@@ -3,7 +3,6 @@ import NavigationBar from "../components/Navbar.js";
 import styled from "styled-components";
 import Main from "../components/Main.js";
 import "../util/styleReset.css";
-import { colors } from "../util/Colors";
 // styles
 const MainPage = styled.main`
   color: "#232129";

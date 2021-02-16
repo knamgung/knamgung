@@ -37,6 +37,11 @@ const StyledLink = styled(Link)`
   color: ${colors.sapGreen};
 
   text-decoration: none;
+
+  &:hover {
+    color: ${colors.lightGreen};
+    transition: 0.25;
+  }
 `;
 
 const Logo = styled.h1`

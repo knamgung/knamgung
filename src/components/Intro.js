@@ -3,6 +3,7 @@ import styled from "styled-components";
 import resume from "../resources/resume.pdf";
 import me from "../images/me.jpg";
 import { colors } from "../util/Colors";
+import Slide from "react-reveal/Slide";
 
 const AboutDiv = styled.div`
   width: 100%;
@@ -13,6 +14,7 @@ const AboutDiv = styled.div`
   }
 
   @media (max-width: 768px) {
+    margin-top: 100px;
   }
 `;
 const Heading = styled.h1`
@@ -31,6 +33,9 @@ const Description = styled.p`
 
 const DescDiv = styled.div`
   width: 65%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 const AltHeading = styled(Heading)`
   padding: 0;
@@ -45,7 +50,7 @@ const ResumeLink = styled.a`
   font-weight: 700;
 `;
 const HeadingBox = styled.div`
-  width: 18.5%;
+  width: 25%;
   padding: 8px 12px;
   background-color: ${colors.sapGreen};
   display: flex;
@@ -61,6 +66,10 @@ const HeadingBox = styled.div`
 
 const AboutInfo = styled.div`
   display: flex;
+  @media (max-width: 768px) {
+    flex-flow: column-reverse;
+    margin-top: 50px;
+  }
 `;
 
 const MyImage = styled.div`
@@ -70,14 +79,22 @@ const MyImage = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 0 0 24px 0;
+    height: 250px;
+  }
 `;
 export default class Intro extends Component {
   render() {
     return (
-      <AboutDiv>
-        <HeadingBox>
-          <AltHeading>Hello!</AltHeading>
-        </HeadingBox>
+      <AboutDiv data-sal="fade" data-sal-duration="1000" data-sal-easing="ease">
+        <Slide left duration={1000}>
+          <HeadingBox>
+            <AltHeading>Hello!</AltHeading>
+          </HeadingBox>
+        </Slide>
         <AboutInfo>
           <DescDiv>
             <Description>
@@ -99,7 +116,7 @@ export default class Intro extends Component {
           </DescDiv>
           <MyImage></MyImage>
         </AboutInfo>
-        <ResumeLink href={resume}>
+        <ResumeLink href={resume} target="_blank" rel="noopener">
           <p>Check out my resume!</p>
         </ResumeLink>
       </AboutDiv>

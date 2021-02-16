@@ -107,7 +107,11 @@ export default class Experience extends Component {
   render() {
     const { currentJob } = this.state;
     return (
-      <ExperienceWrapper>
+      <ExperienceWrapper
+        data-sal="fade"
+        data-sal-duration="1000"
+        data-sal-easing="ease"
+      >
         <Heading>Experience</Heading>
 
         <Experiences>

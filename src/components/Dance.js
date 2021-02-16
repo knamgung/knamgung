@@ -91,7 +91,11 @@ export default class Dance extends Component {
           <AltHeading>Curious About My Dancing?</AltHeading>
         </HeadingBox>
         <DanceSection>
-          <EachDance>
+          <EachDance
+            data-sal="fade"
+            data-sal-duration="500"
+            data-sal-easing="ease"
+          >
             <Subhead>Performance Director</Subhead>
             <Description>
               I had the privlige of being a Performance Director (PD) in both UW
@@ -108,7 +112,11 @@ export default class Dance extends Component {
             </AllVideos>
           </EachDance>
 
-          <EachDance>
+          <EachDance
+            data-sal="fade"
+            data-sal-duration="500"
+            data-sal-easing="ease"
+          >
             <Subhead>Choreography</Subhead>
             <Description>
               Being part of UWHH has given me opportunities to choreograph my
@@ -123,7 +131,11 @@ export default class Dance extends Component {
             </AllVideos>
           </EachDance>
 
-          <EachDance>
+          <EachDance
+            data-sal="fade"
+            data-sal-duration="500"
+            data-sal-easing="ease"
+          >
             <Subhead>Dance Covers</Subhead>
             <Description>
               In Limelight Dance Crew, we film or sometimes perform K-Pop Dance

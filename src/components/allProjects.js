@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { colors } from "../util/Colors";
+import Fade from "react-reveal/Fade";
+import Slide from "react-reveal/Slide";
 
 const AllProjectDiv = styled.div`
   height: 600px;
@@ -30,6 +32,12 @@ const FilterButton = styled.button`
   font-weight: 600;
   padding-top: 5px;
   cursor: pointer;
+
+  &:hover {
+    transition: 0.25s;
+    background-color: ${(props) =>
+      props.active ? `${colors.mediumGreen}` : `${colors.sapGreen}`};
+  }
 `;
 
 const FilterButtonDiv = styled.div`
@@ -56,22 +64,7 @@ const ProjectAll = styled.div`
   }
 `;
 
-const ProjectDiv = styled.div`
-  width: 48%;
-  height: 180px;
-  background-color: ${colors.sapGreen};
-  margin: 24px 0;
-  -webkit-box-shadow: 9px 9px 17px 2px rgba(0, 0, 0, 0.13);
-  box-shadow: 9px 9px 17px 2px rgba(0, 0, 0, 0.13);
-
-  @media (max-width: 1280px) {
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-    margin-bottom: 24px;
-  }
-`;
+const ProjectDiv = styled.div``;
 const ProjectTitleDiv = styled.div`
   display: flex;
   align-items: flex-end;
@@ -117,6 +110,21 @@ const ProjectTagName = styled.p`
 `;
 const StyledLink = styled(Link)`
   text-decoration: none;
+  width: 48%;
+  height: 180px;
+  background-color: ${colors.sapGreen};
+  margin: 24px 0;
+  -webkit-box-shadow: 9px 9px 17px 2px rgba(0, 0, 0, 0.13);
+  box-shadow: 9px 9px 17px 2px rgba(0, 0, 0, 0.13);
+
+  &:hover {
+    transform: translateY(-5px);
+    transition: 1s;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 24px;
+  }
 `;
 const allProjectData = [
   {
@@ -154,8 +162,8 @@ export default class AllProjects extends Component {
       .map((project) => {
         const { title, subject, description } = project;
         return (
-          <ProjectDiv>
-            <StyledLink to={`${title}`}>
+          <StyledLink to={`${title}`}>
+            <ProjectDiv>
               <ProjectTitleDiv>
                 <ProjecTitle>{title}</ProjecTitle>
                 <ProjectTagDiv>
@@ -167,8 +175,8 @@ export default class AllProjects extends Component {
               <ProjectDescrDiv>
                 <ProjectDescr>{description}</ProjectDescr>
               </ProjectDescrDiv>
-            </StyledLink>
-          </ProjectDiv>
+            </ProjectDiv>
+          </StyledLink>
         );
       });
   };
@@ -176,28 +184,35 @@ export default class AllProjects extends Component {
     const { projectFilter } = this.state;
     return (
       <AllProjectDiv>
-        <Heading>Projects</Heading>
-        <FilterButtonDiv>
-          <FilterButton
-            active={projectFilter === "ALL"}
-            onClick={() => this.setState({ projectFilter: "ALL" })}
-          >
-            ALL
-          </FilterButton>
-          <FilterButton
-            active={projectFilter === "DESIGN"}
-            onClick={() => this.setState({ projectFilter: "DESIGN" })}
-          >
-            DESIGN
-          </FilterButton>
-          <FilterButton
-            active={projectFilter === "CODE"}
-            onClick={() => this.setState({ projectFilter: "CODE" })}
-          >
-            CODE
-          </FilterButton>
-        </FilterButtonDiv>
-        <ProjectAll>{this.renderProjects()}</ProjectAll>
+        <Slide left duration={1000}>
+          <Heading>Projects</Heading>
+        </Slide>
+
+        <Fade bottom duration={1000}>
+          <FilterButtonDiv>
+            <FilterButton
+              active={projectFilter === "ALL"}
+              onClick={() => this.setState({ projectFilter: "ALL" })}
+            >
+              ALL
+            </FilterButton>
+            <FilterButton
+              active={projectFilter === "DESIGN"}
+              onClick={() => this.setState({ projectFilter: "DESIGN" })}
+            >
+              DESIGN
+            </FilterButton>
+            <FilterButton
+              active={projectFilter === "CODE"}
+              onClick={() => this.setState({ projectFilter: "CODE" })}
+            >
+              CODE
+            </FilterButton>
+          </FilterButtonDiv>
+        </Fade>
+        <Fade duration={2000}>
+          <ProjectAll>{this.renderProjects()}</ProjectAll>
+        </Fade>
       </AllProjectDiv>
     );
   }
