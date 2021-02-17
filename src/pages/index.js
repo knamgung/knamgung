@@ -3,6 +3,8 @@ import NavigationBar from "../components/Navbar.js";
 import styled from "styled-components";
 import Main from "../components/Main.js";
 import "../util/styleReset.css";
+import { Helmet } from "react-helmet";
+
 // styles
 const MainPage = styled.main`
   color: "#232129";
@@ -26,6 +28,11 @@ const MainPage = styled.main`
 const IndexPage = () => {
   return (
     <MainPage>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Bean Namgung</title>
+        <link rel="canonical" href="https://namgung.ca/" />
+      </Helmet>
       <NavigationBar />
       <Main></Main>
     </MainPage>
