@@ -84,7 +84,7 @@ const Author = styled.a`
   outline: none;
   display: flex;
   justify-content: center;
-  margin-top: 180px;
+  margin-top: 150px;
   cursor: default;
 `;
 

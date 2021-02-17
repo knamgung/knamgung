@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import { colors } from "../util/Colors";
 import "../util/styleReset.css";
+import Fade from "react-reveal/Fade";
 
 const ExperienceWrapper = styled.div`
   margin: 240px 0;
@@ -55,6 +56,11 @@ const EachJob = styled.button`
       props.company === props.state
         ? `1.5px solid ${colors.lightGreen};`
         : "none"};
+  }
+
+  &:hover {
+    background-color: ${colors.mediumGreen};
+    transition: 1s;
   }
 `;
 
@@ -154,31 +160,33 @@ export default class Experience extends Component {
 function Faire() {
   return (
     <JobDescription>
-      <JobTitle>Front-End 'React' Engineer [Co-op]</JobTitle>
-      <JobCompany href="https://www.faire.com/" target="_blank">
-        Faire
-      </JobCompany>
+      <Fade bottom>
+        <JobTitle>Front-End 'React' Engineer [Co-op]</JobTitle>
+        <JobCompany href="https://www.faire.com/" target="_blank">
+          Faire
+        </JobCompany>
 
-      <JobPoints>
-        <span role="img" aria-label="plant-emoji">
-          🌱
-        </span>
-        <JobText>
-          Ensured a positive trend in Faire’s GMV in weekly sprints by
-          developing new features to relieve pain points for the brand’s order
-          management experience.
-        </JobText>
-      </JobPoints>
+        <JobPoints>
+          <span role="img" aria-label="plant-emoji">
+            🌱
+          </span>
+          <JobText>
+            Ensured a positive trend in Faire’s GMV in weekly sprints by
+            developing new features to relieve pain points for the brand’s order
+            management experience.
+          </JobText>
+        </JobPoints>
 
-      <JobPoints>
-        <span role="img" aria-label="plant-emoji">
-          🌱
-        </span>
-        <JobText>
-          Established constant communication to avoid unnecessary conflicts and
-          assure progress working from home.
-        </JobText>
-      </JobPoints>
+        <JobPoints>
+          <span role="img" aria-label="plant-emoji">
+            🌱
+          </span>
+          <JobText>
+            Established constant communication to avoid unnecessary conflicts
+            and assure progress working from home.
+          </JobText>
+        </JobPoints>
+      </Fade>
     </JobDescription>
   );
 }
@@ -186,33 +194,35 @@ function Faire() {
 function Limelight() {
   return (
     <JobDescription>
-      <JobTitle>Director</JobTitle>
-      <JobCompany
-        href="https://www.youtube.com/channel/UC40GdqVnIsD23o_5fYvy3dQ"
-        target="_blank"
-      >
-        Limelight Dance Crew
-      </JobCompany>
+      <Fade bottom>
+        <JobTitle>Director</JobTitle>
+        <JobCompany
+          href="https://www.youtube.com/channel/UC40GdqVnIsD23o_5fYvy3dQ"
+          target="_blank"
+        >
+          Limelight Dance Crew
+        </JobCompany>
 
-      <JobPoints>
-        <span role="img" aria-label="plant-emoji">
-          🌱
-        </span>
-        <JobText>
-          Contributes in diversifying Waterloo’s Dance Community by marketing
-          Limelight’s performances and Youtube channel
-        </JobText>
-      </JobPoints>
+        <JobPoints>
+          <span role="img" aria-label="plant-emoji">
+            🌱
+          </span>
+          <JobText>
+            Contributes in diversifying Waterloo’s Dance Community by marketing
+            Limelight’s performances and Youtube channel
+          </JobText>
+        </JobPoints>
 
-      <JobPoints>
-        <span role="img" aria-label="plant-emoji">
-          🌱
-        </span>
-        <JobText>
-          Efficient tools utilization and work habits reduce average production
-          time by 2 weeks
-        </JobText>
-      </JobPoints>
+        <JobPoints>
+          <span role="img" aria-label="plant-emoji">
+            🌱
+          </span>
+          <JobText>
+            Efficient tools utilization and work habits reduce average
+            production time by 2 weeks
+          </JobText>
+        </JobPoints>
+      </Fade>
     </JobDescription>
   );
 }
@@ -220,20 +230,22 @@ function Limelight() {
 function FC() {
   return (
     <JobDescription>
-      <JobTitle>Motion Graphic Designer</JobTitle>
-      <JobCompany href="https://fashionforchange.ca/" target="_blank">
-        Fashion For Change
-      </JobCompany>
+      <Fade bottom>
+        <JobTitle>Motion Graphic Designer</JobTitle>
+        <JobCompany href="https://fashionforchange.ca/" target="_blank">
+          Fashion For Change
+        </JobCompany>
 
-      <JobPoints>
-        <span role="img" aria-label="plant-emoji">
-          🌱
-        </span>
-        <JobText>
-          Conducted a team of videographers to film, edit and produce 50% of all
-          the scene shoots for the final show
-        </JobText>
-      </JobPoints>
+        <JobPoints>
+          <span role="img" aria-label="plant-emoji">
+            🌱
+          </span>
+          <JobText>
+            Conducted a team of videographers to film, edit and produce 50% of
+            all the scene shoots for the final show
+          </JobText>
+        </JobPoints>
+      </Fade>
     </JobDescription>
   );
 }
