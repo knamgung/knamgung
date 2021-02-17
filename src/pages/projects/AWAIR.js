@@ -641,11 +641,7 @@ export default class AWAIR extends Component {
               </PreviewHeader>
             </ProjectHeader>
 
-            <Ideation
-              data-sal="fade"
-              data-sal-duration="1000"
-              data-sal-easing="ease"
-            >
+            <Ideation>
               <SectionTitle>Ideation</SectionTitle>
               <IdeationSection>
                 <IdeationDesc>
@@ -667,11 +663,7 @@ export default class AWAIR extends Component {
               </IdeationSection>
             </Ideation>
 
-            <Sprint
-              data-sal="fade"
-              data-sal-duration="1000"
-              data-sal-easing="ease"
-            >
+            <Sprint>
               <TitleBox>
                 <AltSectionTitle>Our Sprints</AltSectionTitle>
               </TitleBox>
@@ -686,8 +678,7 @@ export default class AWAIR extends Component {
                   scrollToSelected={true}
                   selected={this.state.selected}
                   onSelect={this.onSelect}
-                  arrowLeft={<Arrow>{"<"}</Arrow>}
-                  arrowRight={<Arrow>{">"}</Arrow>}
+                  inertiaScrolling
                   data={sprintData.map((sprint) => {
                     return (
                       <EachSprint color={sprint.color} key={sprint.videoId}>
@@ -707,11 +698,7 @@ export default class AWAIR extends Component {
               </SprintSection>
             </Sprint>
 
-            <BigHero
-              data-sal="fade"
-              data-sal-duration="1000"
-              data-sal-easing="ease"
-            >
+            <BigHero>
               <SectionTitle>Big Idea Summary & Hero Image</SectionTitle>
               <BigHeroSection>
                 <BigHeroImagesWrap>
@@ -721,11 +708,7 @@ export default class AWAIR extends Component {
               </BigHeroSection>
             </BigHero>
 
-            <ProposalBoard
-              data-sal="fade"
-              data-sal-duration="1000"
-              data-sal-easing="ease"
-            >
+            <ProposalBoard>
               <TitleBox>
                 <AltSectionTitle>Proposal Boards</AltSectionTitle>
               </TitleBox>
@@ -754,11 +737,7 @@ export default class AWAIR extends Component {
               </ProposalBoardSection>
             </ProposalBoard>
 
-            <BusinessModel
-              data-sal="fade"
-              data-sal-duration="1000"
-              data-sal-easing="ease"
-            >
+            <BusinessModel>
               <SectionTitle>Business Model Canvas</SectionTitle>
 
               <BMCSection>

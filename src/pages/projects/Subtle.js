@@ -302,11 +302,7 @@ export default class Subtle extends Component {
               </PreviewHeader>
             </ProjectHeader>
 
-            <Ideation
-              data-sal="fade"
-              data-sal-duration="1000"
-              data-sal-easing="ease"
-            >
+            <Ideation>
               <SectionTitle>Ideation</SectionTitle>
               <IdeationSection style={{ marginTop: "80px" }}>
                 <SectionDescription>
@@ -347,11 +343,7 @@ export default class Subtle extends Component {
               </IdeationSection>
             </Ideation>
 
-            <KeyChallenges
-              data-sal="fade"
-              data-sal-duration="1000"
-              data-sal-easing="ease"
-            >
+            <KeyChallenges>
               <TitleBox>
                 <AltSectionTitle>Key Challenges</AltSectionTitle>
               </TitleBox>
