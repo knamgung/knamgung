@@ -675,9 +675,9 @@ export default class AWAIR extends Component {
                   }}
                   alignCenter={false}
                   itemStyle={{ outline: "none" }}
-                  scrollToSelected={true}
-                  selected={this.state.selected}
-                  onSelect={this.onSelect}
+                  // scrollToSelected={true}
+                  // selected={this.state.selected}
+                  // onSelect={this.onSelect}
                   inertiaScrolling
                   data={sprintData.map((sprint) => {
                     return (
