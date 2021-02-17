@@ -569,7 +569,7 @@ const Arrow = styled.h1`
   padding: 20px;
   cursor: pointer;
   font-weight: 800;
-  padding: 0 24px;
+  padding: 0 12px;
   &:hover {
     color: ${colors.whiteGreen};
   }
@@ -580,6 +580,7 @@ export default class AWAIR extends Component {
   };
 
   onSelect = (key) => {
+    console.log(key);
     this.setState({ selected: key });
   };
 
@@ -674,10 +675,11 @@ export default class AWAIR extends Component {
                     width: "100%",
                   }}
                   alignCenter={false}
+                  wheel={false}
                   itemStyle={{ outline: "none" }}
-                  // scrollToSelected={true}
-                  // selected={this.state.selected}
-                  // onSelect={this.onSelect}
+                  scrollToSelected={true}
+                  selected={this.state.selected}
+                  onSelect={this.onSelect}
                   inertiaScrolling
                   data={sprintData.map((sprint) => {
                     return (
