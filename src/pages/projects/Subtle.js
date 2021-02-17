@@ -6,6 +6,9 @@ import problemSpace from "../../images/subtle/problem-space.png";
 import keyChallenges from "../../images/subtle/key-challenges.png";
 import "../../util/styleReset.css";
 
+import Fade from "react-reveal/Fade";
+import Slide from "react-reveal/Slide";
+
 import { colors } from "../../util/Colors";
 const MainPage = styled.main`
   color: ${colors.lightGreen};
@@ -26,15 +29,14 @@ const MainPage = styled.main`
 
 const ProjectHeader = styled.div`
   width: 100%;
+  margin: 240px 0 180px 0;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   @media (max-width: 1280px) {
     flex-direction: column;
-  }
-
-  @media (max-width: 768px) {
+    margin: 180px 0;
   }
 `;
 
@@ -42,7 +44,6 @@ const SubtleDiv = styled.div`
   width: 100%;
   display: flex;
   flex-flow: column;
-  margin-top: 140px;
 `;
 
 const TitleHeader = styled.div`
@@ -62,6 +63,7 @@ const SubtleDescription = styled.p`
 const ProjectDescMono = styled.p`
   font-family: "IBM Plex Mono", monospace;
   font-size: 16px;
+  margin-top: 0;
 `;
 const ProjectTag = styled.div`
   display: flex;
@@ -103,15 +105,16 @@ const Subhead = styled.h5`
   color: ${colors.whiteGreen};
 `;
 
-const StackList = styled.ul`
-  list-style: none;
+const StackList = styled.div`
+  display: flex;
+  flex-flow: wrap;
   padding: 0;
+  width: 100%;
   margin: 28px 0;
 `;
 
-const StackItems = styled.li`
-  display: inline;
-  margin-right: 24px;
+const StackItems = styled.p`
+  padding: 0 24px 0 0;
 `;
 
 const PreviewHeader = styled.div`
@@ -252,47 +255,58 @@ export default class Subtle extends Component {
           <SubtleDiv>
             <ProjectHeader>
               <DescriptionHeader>
-                <TitleHeader>
-                  <ProjectTitle>Subtle.</ProjectTitle>
-                  <ProjectTag>
-                    <ProjectTagName>CODE</ProjectTagName>
-                  </ProjectTag>
-                </TitleHeader>
-                <SubtleDescription>
-                  <b>BrainStation Capstone Project</b>
-
+                <Slide left duration={1000}>
+                  <TitleHeader>
+                    <ProjectTitle>Subtle.</ProjectTitle>
+                    <ProjectTag>
+                      <ProjectTagName>CODE</ProjectTagName>
+                    </ProjectTag>
+                  </TitleHeader>
+                </Slide>
+                <Fade bottom duration={1500} cascade>
+                  <SubtleDescription>
+                    <b>BrainStation Capstone Project</b>
+                  </SubtleDescription>
                   <ProjectDescMono>
                     a machine-learning application that analyzes poses in
                     photographs to provide a summary of repetitive gestures
                   </ProjectDescMono>
-                </SubtleDescription>
-                <div>
-                  <Subhead>Front-End</Subhead>
-                  <StackList>
-                    <StackItems>Apollo</StackItems>
-                    <StackItems>ml5.js</StackItems>
-                    <StackItems>p5.js</StackItems>
-                    <StackItems>React.js</StackItems>
-                    <StackItems>Tensorflow.js</StackItems>
-                  </StackList>
-                </div>
-                <div>
-                  <Subhead>Back-End</Subhead>
+                </Fade>
+                <Fade bottom duration={1000} delay={1000} cascade>
+                  <div>
+                    <Subhead>Front-End</Subhead>
+                    <StackList>
+                      <StackItems>Apollo</StackItems>
+                      <StackItems>ml5.js</StackItems>
+                      <StackItems>p5.js</StackItems>
+                      <StackItems>React.js</StackItems>
+                      <StackItems>Tensorflow.js</StackItems>
+                    </StackList>
+                  </div>
+                </Fade>
+                <Fade bottom duration={1000} delay={1500} cascade>
+                  <div>
+                    <Subhead>Back-End</Subhead>
 
-                  <StackList>
-                    <StackItems>Express.js</StackItems>
-                    <StackItems>GraphQL</StackItems>
-                    <StackItems>Mongoose</StackItems>
-                    <StackItems>MongoDB</StackItems>
-                  </StackList>
-                </div>
+                    <StackList>
+                      <StackItems>Express.js</StackItems>
+                      <StackItems>GraphQL</StackItems>
+                      <StackItems>Mongoose</StackItems>
+                      <StackItems>MongoDB</StackItems>
+                    </StackList>
+                  </div>
+                </Fade>
               </DescriptionHeader>
               <PreviewHeader>
                 <PreviewImage src={preview}></PreviewImage>
               </PreviewHeader>
             </ProjectHeader>
 
-            <Ideation>
+            <Ideation
+              data-sal="fade"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <SectionTitle>Ideation</SectionTitle>
               <IdeationSection style={{ marginTop: "80px" }}>
                 <SectionDescription>
@@ -333,7 +347,11 @@ export default class Subtle extends Component {
               </IdeationSection>
             </Ideation>
 
-            <KeyChallenges>
+            <KeyChallenges
+              data-sal="fade"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <TitleBox>
                 <AltSectionTitle>Key Challenges</AltSectionTitle>
               </TitleBox>

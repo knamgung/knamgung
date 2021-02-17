@@ -11,10 +11,10 @@ const AboutDiv = styled.div`
   flex-flow: column;
   margin-top: 200px;
   @media (max-width: 1280px) {
+    margin-top: 180px;
   }
 
   @media (max-width: 768px) {
-    margin-top: 100px;
   }
 `;
 const Heading = styled.h1`

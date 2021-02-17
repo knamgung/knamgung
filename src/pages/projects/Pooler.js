@@ -8,7 +8,8 @@ import ideation from "../../images/Pooler/ideation.png";
 import "../../util/styleReset.css";
 
 import { colors } from "../../util/Colors";
-
+import Fade from "react-reveal/Fade";
+import Slide from "react-reveal/Slide";
 const MainPage = styled.main`
   color: ${colors.lightGreen};
   width: 100%;
@@ -27,15 +28,14 @@ const MainPage = styled.main`
 
 const ProjectHeader = styled.div`
   width: 100%;
+  margin: 240px 0 180px 0;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   @media (max-width: 1280px) {
     flex-direction: column;
-  }
-
-  @media (max-width: 768px) {
+    margin: 180px 0;
   }
 `;
 
@@ -43,7 +43,6 @@ const SubtleDiv = styled.div`
   width: 100%;
   display: flex;
   flex-flow: column;
-  margin-top: 140px;
 `;
 
 const TitleHeader = styled.div`
@@ -63,6 +62,7 @@ const SubtleDescription = styled.p`
 const ProjectDescMono = styled.p`
   font-family: "IBM Plex Mono", monospace;
   font-size: 16px;
+  margin-top: 0;
 `;
 
 const ProjectTag = styled.div`
@@ -336,35 +336,43 @@ export default class Pooler extends Component {
           <SubtleDiv>
             <ProjectHeader>
               <DescriptionHeader>
-                <TitleHeader>
-                  <ProjectTitle>Pooler</ProjectTitle>
-                  <ProjectTag>
-                    <ProjectTagName>CODE</ProjectTagName>
-                  </ProjectTag>
-                </TitleHeader>
-                <SubtleDescription>
-                  <b>GBDA 301 Final Project </b>
+                <Slide left duration={1000}>
+                  <TitleHeader>
+                    <ProjectTitle>Pooler</ProjectTitle>
+                    <ProjectTag>
+                      <ProjectTagName>CODE</ProjectTagName>
+                    </ProjectTag>
+                  </TitleHeader>
+                </Slide>
+                <Fade bottom duration={1500} cascade>
+                  <SubtleDescription>
+                    <b>GBDA 301 Final Project </b>
+                  </SubtleDescription>
                   <ProjectDescMono>
                     A mobile rideshare application that provides passengers with
                     consistent reliable rides, and drivers with solution to cost
                     calculation and payment receiving capabilities
                   </ProjectDescMono>
-                </SubtleDescription>
-                <div>
-                  <Subhead>Team</Subhead>
-                  <StackList>
-                    <StackItems>Kevin Tang</StackItems>
-                  </StackList>
-                </div>
-                <div>
-                  <Subhead>Front-End</Subhead>
+                </Fade>
+                <Fade bottom duration={1000} delay={1000} cascade>
+                  <div>
+                    <Subhead>Team</Subhead>
+                    <StackList>
+                      <StackItems>Kevin Tang</StackItems>
+                    </StackList>
+                  </div>
+                </Fade>
+                <Fade bottom duration={1000} delay={1500} cascade>
+                  <div>
+                    <Subhead>Front-End</Subhead>
 
-                  <StackList>
-                    <StackItems>React Native</StackItems>
-                    <StackItems>Axios</StackItems>
-                    <StackItems>Expo</StackItems>
-                  </StackList>
-                </div>
+                    <StackList>
+                      <StackItems>React Native</StackItems>
+                      <StackItems>Axios</StackItems>
+                      <StackItems>Expo</StackItems>
+                    </StackList>
+                  </div>
+                </Fade>
               </DescriptionHeader>
               <PreviewHeader>
                 <PreviewImage src={heading}></PreviewImage>

@@ -21,6 +21,7 @@ const MainDiv = styled.div`
 
   @media (max-width: 768px) {
     background-size: 65%;
+    justify-content: flex-start;
   }
 `;
 const Heading = styled.h1`
@@ -28,24 +29,31 @@ const Heading = styled.h1`
   font-size: 64px;
   color: ${colors.lightGreen};
   margin: 0;
+  @media (max-width: 768px) {
+    font-size: 48px;
+  }
 `;
 
 const HeroIntro = styled.p`
   font-family: "IBM Plex Mono", monospace;
   margin-bottom: 40px;
-  width: 50%;
+  width: 45%;
   font-size: 14px;
   line-height: 20px;
   color: ${colors.lightGreen};
   @media (max-width: 1280px) {
     width: 65%;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const IntroMessage = styled.p`
   color: white;
   margin-top: 100px;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 100;
 `;
 
@@ -63,6 +71,7 @@ const BioButton = styled.a`
   text-decoration: none;
   font-weight: 700;
   border: 2px ${colors.lightGreen} solid;
+  background-color: ${colors.darkGreen};
 
   &:hover {
     transition: 0.25s;
@@ -110,7 +119,8 @@ export default class Main extends Component {
           <Fade left cascade duration={1000}>
             <Heading>Bean Namgung</Heading>
             <HeroIntro>
-              I am a React developer based in Vancouver, BC pursuing to build
+              I also go by <IntroSpan>Ken!</IntroSpan> I am a React developer
+              based in Vancouver, BC pursuing to build
               <IntroSpan> beautiful</IntroSpan>,
               <IntroSpan> responsive</IntroSpan>, and
               <IntroSpan> user-friendly</IntroSpan> application.

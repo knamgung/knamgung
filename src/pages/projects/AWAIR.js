@@ -25,6 +25,9 @@ import businessModelCanvas from "../../images/AWAIR/BMC.png";
 import bmcFile from "../../resources/BMC.pdf";
 import financeFile from "../../resources/Financial.pdf";
 
+import Fade from "react-reveal/Fade";
+import Slide from "react-reveal/Slide";
+
 import { colors } from "../../util/Colors";
 
 const MainPage = styled.main`
@@ -46,14 +49,14 @@ const MainPage = styled.main`
 const ProjectHeader = styled.div`
   width: 100%;
 
+  margin: 240px 0 180px 0;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   @media (max-width: 1280px) {
     flex-direction: column;
-  }
-
-  @media (max-width: 768px) {
+    margin: 180px 0;
   }
 `;
 
@@ -61,7 +64,6 @@ const SubtleDiv = styled.div`
   width: 100%;
   display: flex;
   flex-flow: column;
-  margin-top: 140px;
 `;
 
 const TitleHeader = styled.div`
@@ -81,6 +83,7 @@ const SubtleDescription = styled.p`
 const ProjectDescMono = styled.p`
   font-family: "IBM Plex Mono", monospace;
   font-size: 16px;
+  margin-top: 0;
 `;
 const ProjectTag = styled.div`
   display: flex;
@@ -117,15 +120,16 @@ const DescriptionHeader = styled.div`
   }
 `;
 
-const StackList = styled.ul`
-  list-style: none;
+const StackList = styled.div`
+  display: flex;
+  flex-flow: wrap;
   padding: 0;
+  width: 100%;
   margin: 28px 0;
 `;
 
-const StackItems = styled.li`
-  display: inline;
-  margin-right: 24px;
+const StackItems = styled.p`
+  padding: 0 24px 0 0;
 `;
 
 const PreviewHeader = styled.div`
@@ -506,6 +510,11 @@ const BMCLink = styled.a`
   &:active {
     color: inherit;
   }
+
+  &:hover {
+    text-decoration: underline;
+    transition: 2s;
+  }
 `;
 
 const BMCDescription = styled.div`
@@ -556,13 +565,15 @@ const sprintData = [
   },
 ];
 
-const Arrow = styled.div`
+const Arrow = styled.h1`
   padding: 20px;
   cursor: pointer;
-  color: black;
   font-weight: 800;
+  padding: 0 24px;
+  &:hover {
+    color: ${colors.whiteGreen};
+  }
 `;
-
 export default class AWAIR extends Component {
   state = {
     selected: 484963729,
@@ -584,46 +595,57 @@ export default class AWAIR extends Component {
           <SubtleDiv>
             <ProjectHeader>
               <DescriptionHeader>
-                <TitleHeader>
-                  <ProjectTitle>AWAIR</ProjectTitle>
-                  <ProjectTag>
-                    <ProjectTagName>DESIGN</ProjectTagName>
-                  </ProjectTag>
-                </TitleHeader>
-                <SubtleDescription>
-                  <b>RSA Student Design Project</b>
-
+                <Slide left duration={1000}>
+                  <TitleHeader>
+                    <ProjectTitle>AWAIR</ProjectTitle>
+                    <ProjectTag>
+                      <ProjectTagName>DESIGN</ProjectTagName>
+                    </ProjectTag>
+                  </TitleHeader>
+                </Slide>
+                <Fade bottom duration={1500} cascade>
+                  <SubtleDescription>
+                    <b>RSA Student Design Project</b>
+                  </SubtleDescription>
                   <ProjectDescMono>
                     AWAIR is an art exhibiton, located first in Toronto,
                     designed to empower citizens to make meaningful change
                     through education about air quality.
                   </ProjectDescMono>
-                </SubtleDescription>
-                <div>
-                  <Subhead>Team</Subhead>
-                  <StackList>
-                    <StackItems>Tessa Bennett</StackItems>
-                    <StackItems>Jocasta Hon</StackItems>
-                    <StackItems>Krystyna Poremba</StackItems>
-                    <StackItems>Sophia Tomaini</StackItems>
-                  </StackList>
-                </div>
-                <div>
-                  <Subhead>Front-End</Subhead>
+                </Fade>
+                <Fade bottom duration={1000} delay={1000} cascade>
+                  <div>
+                    <Subhead>Team</Subhead>
+                    <StackList>
+                      <StackItems>Tessa Bennett</StackItems>
+                      <StackItems>Jocasta Hon</StackItems>
+                      <StackItems>Krystyna Poremba</StackItems>
+                      <StackItems>Sophia Tomaini</StackItems>
+                    </StackList>
+                  </div>
+                </Fade>
+                <Fade bottom duration={1000} delay={1500} cascade>
+                  <div>
+                    <Subhead>Front-End</Subhead>
 
-                  <StackList>
-                    <StackItems>React Native</StackItems>
-                    <StackItems>Axios</StackItems>
-                    <StackItems>Expo</StackItems>
-                  </StackList>
-                </div>
+                    <StackList>
+                      <StackItems>React Native</StackItems>
+                      <StackItems>Axios</StackItems>
+                      <StackItems>Expo</StackItems>
+                    </StackList>
+                  </div>
+                </Fade>
               </DescriptionHeader>
               <PreviewHeader>
                 <PreviewImage src={logo}></PreviewImage>
               </PreviewHeader>
             </ProjectHeader>
 
-            <Ideation>
+            <Ideation
+              data-sal="fade"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <SectionTitle>Ideation</SectionTitle>
               <IdeationSection>
                 <IdeationDesc>
@@ -645,7 +667,11 @@ export default class AWAIR extends Component {
               </IdeationSection>
             </Ideation>
 
-            <Sprint>
+            <Sprint
+              data-sal="fade"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <TitleBox>
                 <AltSectionTitle>Our Sprints</AltSectionTitle>
               </TitleBox>
@@ -657,10 +683,11 @@ export default class AWAIR extends Component {
                   }}
                   alignCenter={false}
                   itemStyle={{ outline: "none" }}
-                  wheel={true}
                   scrollToSelected={true}
                   selected={this.state.selected}
                   onSelect={this.onSelect}
+                  arrowLeft={<Arrow>{"<"}</Arrow>}
+                  arrowRight={<Arrow>{">"}</Arrow>}
                   data={sprintData.map((sprint) => {
                     return (
                       <EachSprint color={sprint.color} key={sprint.videoId}>
@@ -680,7 +707,11 @@ export default class AWAIR extends Component {
               </SprintSection>
             </Sprint>
 
-            <BigHero>
+            <BigHero
+              data-sal="fade"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <SectionTitle>Big Idea Summary & Hero Image</SectionTitle>
               <BigHeroSection>
                 <BigHeroImagesWrap>
@@ -690,7 +721,11 @@ export default class AWAIR extends Component {
               </BigHeroSection>
             </BigHero>
 
-            <ProposalBoard>
+            <ProposalBoard
+              data-sal="fade"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <TitleBox>
                 <AltSectionTitle>Proposal Boards</AltSectionTitle>
               </TitleBox>
@@ -719,7 +754,11 @@ export default class AWAIR extends Component {
               </ProposalBoardSection>
             </ProposalBoard>
 
-            <BusinessModel>
+            <BusinessModel
+              data-sal="fade"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <SectionTitle>Business Model Canvas</SectionTitle>
 
               <BMCSection>

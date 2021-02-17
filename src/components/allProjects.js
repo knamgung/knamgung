@@ -10,11 +10,9 @@ const AllProjectDiv = styled.div`
   width: 100%;
   display: flex;
   flex-flow: column;
-  margin-top: 180px;
+  margin-top: 200px;
   @media (max-width: 1280px) {
-  }
-
-  @media (max-width: 768px) {
+    margin-top: 180px;
   }
 `;
 
