@@ -3,6 +3,7 @@ import NavigationBar from "../components/Navbar.js";
 import styled from "styled-components";
 import Main from "../components/Main.js";
 import "../util/styleReset.css";
+import favicon from "../images/favicon.ico";
 import { Helmet } from "react-helmet";
 
 // styles
@@ -30,8 +31,9 @@ const IndexPage = () => {
     <MainPage>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Bean Namgung</title>
+        <title>Web Developer | Bean Namgung</title>
         <link rel="canonical" href="https://namgung.ca/" />
+        <link rel="icon" href={favicon} />
       </Helmet>
       <NavigationBar />
       <Main></Main>
