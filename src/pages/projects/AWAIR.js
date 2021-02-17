@@ -92,7 +92,7 @@ const ProjectTag = styled.div`
   border-radius: 12px;
   width: 64px;
   height: 20px;
-  background-color: #fdf51f;
+  background-color: ${colors.design};
   margin-bottom: 4px;
   margin-left: 24px;
 `;
@@ -101,6 +101,7 @@ const ProjectTagName = styled.p`
   font-weight: 600;
   font-size: 10px;
   padding-top: 4px;
+  color: ${colors.darkGreen};
 `;
 
 const DescriptionHeader = styled.div`
@@ -141,7 +142,7 @@ const PreviewHeader = styled.div`
 
   @media (max-width: 1280px) {
     width: 60%;
-    margin-top: 24px;
+    margin-top: 50px;
   }
 
   @media (max-width: 768px) {
@@ -233,6 +234,9 @@ const EachSprint = styled.div`
   justify-content: space-between;
   color: white;
   border-radius: 12px;
+  @media (max-width: 768px) {
+    margin-right: 12px;
+  } ;
 `;
 
 const SprintBlock = styled.div`
@@ -246,7 +250,7 @@ const TitleBox = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
-  } ;
+  }
 `;
 
 const Solutions = styled(Ideation)``;
@@ -271,7 +275,7 @@ const SolutionGrey = styled.div`
 `;
 
 const Footer = styled.div`
-  background-color: black;
+  background-color: ${colors.sapGreen};
   display: flex;
   flex-flow: Column;
   align-items: center;
@@ -284,20 +288,22 @@ const Footer = styled.div`
 const FooterMsg = styled.p`
   font-weight: 700;
   margin: 0;
-  color: white;
+  color: ${colors.darkGreen};
 `;
 
 const FooterLink = styled.a`
   text-decoration: none;
   margin-bottom: 24px;
-  color: white;
+  color: ${colors.lightGreen};
 `;
 
 const FooterGit = styled(FooterLink)`
   font-weight: 700;
   margin: 0;
 
-  color: #fdf51f;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const SprintVideo = styled(Vimeo)`
@@ -580,7 +586,6 @@ export default class AWAIR extends Component {
   };
 
   onSelect = (key) => {
-    console.log(key);
     this.setState({ selected: key });
   };
 
@@ -588,7 +593,6 @@ export default class AWAIR extends Component {
     return <Arrow>{text}</Arrow>;
   };
   render() {
-    console.log(this.state.selected);
     return (
       <>
         <MainPage>
@@ -642,7 +646,11 @@ export default class AWAIR extends Component {
               </PreviewHeader>
             </ProjectHeader>
 
-            <Ideation>
+            <Ideation
+              data-sal="fade"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <SectionTitle>Ideation</SectionTitle>
               <IdeationSection>
                 <IdeationDesc>
@@ -664,7 +672,11 @@ export default class AWAIR extends Component {
               </IdeationSection>
             </Ideation>
 
-            <Sprint>
+            <Sprint
+              data-sal="fade"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <TitleBox>
                 <AltSectionTitle>Our Sprints</AltSectionTitle>
               </TitleBox>
@@ -675,7 +687,6 @@ export default class AWAIR extends Component {
                     width: "100%",
                   }}
                   alignCenter={false}
-                  wheel={false}
                   itemStyle={{ outline: "none" }}
                   scrollToSelected={true}
                   selected={this.state.selected}
@@ -700,7 +711,11 @@ export default class AWAIR extends Component {
               </SprintSection>
             </Sprint>
 
-            <BigHero>
+            <BigHero
+              data-sal="fade"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <SectionTitle>Big Idea Summary & Hero Image</SectionTitle>
               <BigHeroSection>
                 <BigHeroImagesWrap>
@@ -710,7 +725,11 @@ export default class AWAIR extends Component {
               </BigHeroSection>
             </BigHero>
 
-            <ProposalBoard>
+            <ProposalBoard
+              data-sal="fade"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <TitleBox>
                 <AltSectionTitle>Proposal Boards</AltSectionTitle>
               </TitleBox>
@@ -739,7 +758,11 @@ export default class AWAIR extends Component {
               </ProposalBoardSection>
             </ProposalBoard>
 
-            <BusinessModel>
+            <BusinessModel
+              data-sal="fade"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <SectionTitle>Business Model Canvas</SectionTitle>
 
               <BMCSection>
@@ -837,12 +860,13 @@ export default class AWAIR extends Component {
         </MainPage>
         <Footer>
           <FooterMsg>
-            Check it out on {` `}
+            Check out my website prototype on
             <FooterGit
               target="_blank"
-              href={`https://github.com/knamgung/pooler`}
+              href={`https://xd.adobe.com/view/0cffae14-25d5-4d92-8a43-a961e6710026-59ac/`}
             >
-              GitHub
+              {" "}
+              Adobe XD
             </FooterGit>
           </FooterMsg>
         </Footer>

@@ -19,7 +19,11 @@ const WebsiteLink = styled.a`
 
 function Website() {
   return (
-    <WebsiteLink>
+    <WebsiteLink
+      href="https://xd.adobe.com/view/0cffae14-25d5-4d92-8a43-a961e6710026-59ac/"
+      rel="noopener"
+      target="_blank"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         x="0"

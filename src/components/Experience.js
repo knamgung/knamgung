@@ -6,7 +6,7 @@ import "../util/styleReset.css";
 import Fade from "react-reveal/Fade";
 
 const ExperienceWrapper = styled.div`
-  margin: 240px 0;
+  margin: 200px 0 240px 0;
 `;
 const Experiences = styled.div`
   width: 100%;
@@ -66,6 +66,7 @@ const EachJob = styled.button`
 
 const JobTitle = styled.h3`
   color: ${colors.whiteGreen};
+  margin-bottom: 6px;
 `;
 
 const JobCompany = styled.a`
@@ -73,12 +74,22 @@ const JobCompany = styled.a`
   text-decoration: none;
   color: ${colors.lightGreen};
   font-weight: 700;
-  font-size: 18px;
-`;
+  font-size: 16px;
+  text-decoration: underline;
 
+  &:hover {
+    color: ${colors.sapGreen};
+    transition: 0.25s;
+  }
+`;
+const Dates = styled.p`
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: white;
+`;
 const JobDescription = styled.div`
   width: 70%;
-  height: 300px;
+  height: 400px;
 
   @media (max-width: 768px) {
     margin-top: 32px;
@@ -92,6 +103,7 @@ const JobText = styled.p`
   color: ${colors.lightGreen};
   margin: 0;
   line-height: 18px;
+  font-size: 12px;
 `;
 
 const JobPoints = styled.div`
@@ -143,11 +155,20 @@ export default class Experience extends Component {
             >
               Fashion For Change
             </EachJob>
+            <EachJob
+              company="UWHH"
+              onClick={() => this.setState({ currentJob: "UWHH" })}
+              state={currentJob}
+            >
+              UW Hip Hop
+            </EachJob>
           </JobList>
           {currentJob === "Faire" ? (
             <Faire></Faire>
           ) : currentJob === "Limelight" ? (
             <Limelight></Limelight>
+          ) : currentJob === "UWHH" ? (
+            <UWHH></UWHH>
           ) : (
             <FC></FC>
           )}
@@ -165,15 +186,16 @@ function Faire() {
         <JobCompany href="https://www.faire.com/" target="_blank">
           Faire
         </JobCompany>
+        <Dates>Waterloo, ON May. 2020 - August 2020</Dates>
 
         <JobPoints>
           <span role="img" aria-label="plant-emoji">
             🌱
           </span>
           <JobText>
-            Ensured a positive trend in Faire’s GMV in weekly sprints by
-            developing new features to relieve pain points for the brand’s order
-            management experience.
+            Ensured a positive trend in Faire’s GMV using Agile by collaborating
+            on new features with my pod to relieve pain points for the brand’s
+            order management experience.
           </JobText>
         </JobPoints>
 
@@ -182,8 +204,28 @@ function Faire() {
             🌱
           </span>
           <JobText>
-            Established constant communication to avoid unnecessary conflicts
-            and assure progress working from home.
+            Developed responsive TypeScript React components using MobX to
+            manage states in order to integrate Faire’s API.
+          </JobText>
+        </JobPoints>
+
+        <JobPoints>
+          <span role="img" aria-label="plant-emoji">
+            🌱
+          </span>
+          <JobText>
+            Constructed Cypress and Jest user flow tests to determine all bugs
+            in my work before they were deployed live to the website.
+          </JobText>
+        </JobPoints>
+
+        <JobPoints>
+          <span role="img" aria-label="plant-emoji">
+            🌱
+          </span>
+          <JobText>
+            Contributed in diversifying Waterloo’s Dance Community by marketing
+            Limelight’s performances and Youtube channel.
           </JobText>
         </JobPoints>
       </Fade>
@@ -202,6 +244,7 @@ function Limelight() {
         >
           Limelight Dance Crew
         </JobCompany>
+        <Dates>Waterloo, ON Jan. 2018 - Dec. 2020</Dates>
 
         <JobPoints>
           <span role="img" aria-label="plant-emoji">
@@ -209,7 +252,7 @@ function Limelight() {
           </span>
           <JobText>
             Contributes in diversifying Waterloo’s Dance Community by marketing
-            Limelight’s performances and Youtube channel
+            Limelight’s performances and Youtube channel.
           </JobText>
         </JobPoints>
 
@@ -218,8 +261,8 @@ function Limelight() {
             🌱
           </span>
           <JobText>
-            Efficient tools utilization and work habits reduce average
-            production time by 2 weeks
+            Operated the production team to film and edit shots using Premiere
+            Pro to create high quality dance covers.
           </JobText>
         </JobPoints>
       </Fade>
@@ -235,6 +278,7 @@ function FC() {
         <JobCompany href="https://fashionforchange.ca/" target="_blank">
           Fashion For Change
         </JobCompany>
+        <Dates>Waterloo, ON Oct 2018 - April 2019</Dates>
 
         <JobPoints>
           <span role="img" aria-label="plant-emoji">
@@ -243,6 +287,42 @@ function FC() {
           <JobText>
             Conducted a team of videographers to film, edit and produce 50% of
             all the scene shoots for the final show
+          </JobText>
+        </JobPoints>
+        <JobPoints>
+          <span role="img" aria-label="plant-emoji">
+            🌱
+          </span>
+          <JobText>
+            Animated graphic assets with Adobe After Effects to incorporate
+            branding in Fashion For Change's promotional videos and show scenes.
+          </JobText>
+        </JobPoints>
+      </Fade>
+    </JobDescription>
+  );
+}
+
+function UWHH() {
+  return (
+    <JobDescription>
+      <Fade bottom>
+        <JobTitle>Performance Director</JobTitle>
+        <JobCompany
+          href="https://www.instagram.com/uwhiphop/?hl=en"
+          target="_blank"
+        >
+          UW Hip Hop
+        </JobCompany>
+        <Dates>Waterloo, ON Sept. 2019 - Dec. 2019</Dates>
+
+        <JobPoints>
+          <span role="img" aria-label="plant-emoji">
+            🌱
+          </span>
+          <JobText>
+            Directed a team of 100 performers to showcase a performance to
+            represent University of Waterloo's hip hop community.
           </JobText>
         </JobPoints>
       </Fade>

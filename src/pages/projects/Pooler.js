@@ -72,7 +72,7 @@ const ProjectTag = styled.div`
   border-radius: 12px;
   width: 64px;
   height: 20px;
-  background-color: #fdf51f;
+  background-color: ${colors.code};
   margin-bottom: 4px;
   margin-left: 24px;
 `;
@@ -81,6 +81,7 @@ const ProjectTagName = styled.p`
   font-weight: 600;
   font-size: 10px;
   padding-top: 4px;
+  color: ${colors.darkGreen};
 `;
 
 const DescriptionHeader = styled.div`
@@ -119,7 +120,7 @@ const PreviewHeader = styled.div`
 
   @media (max-width: 1280px) {
     width: 60%;
-    margin-top: 24px;
+    margin-top: 50px;
   }
 
   @media (max-width: 768px) {
@@ -312,20 +313,21 @@ const Footer = styled.div`
 const FooterMsg = styled.p`
   font-weight: 700;
   margin: 0;
-  color: white;
+  color: ${colors.darkGreen};
 `;
 
 const FooterLink = styled.a`
   text-decoration: none;
   margin-bottom: 24px;
-  color: white;
+  color: ${colors.lightGreen};
 `;
 
 const FooterGit = styled(FooterLink)`
   font-weight: 700;
   margin: 0;
-
-  color: #fdf51f;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 export default class Pooler extends Component {
   render() {
@@ -379,37 +381,45 @@ export default class Pooler extends Component {
               </PreviewHeader>
             </ProjectHeader>
 
-            <Ideation>
+            <Ideation
+              data-sal="fade"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <SectionTitle>Ideation</SectionTitle>
               <IdeationSection>
                 <IdeationDesc>
                   <SectionDescription>
                     I wanted to explore mobile development after having done
-                    work strictly on web. Once we got our syllabus for GBDA 301,
-                    I had asked my friend Kevin if he wanted to do a project of
-                    our own for this course, he said yes and quiclly we got to
-                    thinking what kind of solution we wanted to solve. Due to
-                    the fact that all the classes were located in Stratford for
-                    the third years, Kevin had been driving our friends almost
-                    every single day. He was explaining to me how it was
-                    challenging for him to calculate how much everyone owed by
-                    the end of every month (e.g. sick days/missing class). We
-                    took his pain point and used it as our starting point in
-                    ideation.
+                    work strictly on the web. Once we got our syllabus for GBDA
+                    301, I had asked my friend Kevin if he wanted to do a
+                    project of our own for this course, he said yes and quickly
+                    we got to thinking what kind of solution we wanted to solve.
+                    Due to the fact that all the classes were located in
+                    Stratford for the third years, Kevin had been driving our
+                    friends almost every single day. He was explaining to me how
+                    it was challenging for him to calculate how much everyone
+                    owed by the end of every month (e.g. sick days/missing
+                    class). We took his pain point and used it as our starting
+                    point in ideation.
                   </SectionDescription>
                   <SectionDescription style={{ marginTop: "30px" }}>
                     Our project proposal was for a mobile application that aimed
                     to make record-keeping for carpooling easier to create and
                     upkeep; allowing for the driver to update due payments
                     consistently, to give riders better access to information on
-                    their payment 'tabs'. Back End Axios Expo
+                    their payment 'tabs'.
                   </SectionDescription>
                 </IdeationDesc>
                 <IdeationImg src={ideation}></IdeationImg>
               </IdeationSection>
             </Ideation>
 
-            <Brainstorm>
+            <Brainstorm
+              data-sal="fade"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <TitleBox>
                 <AltSectionTitle>Brainstorm + First Iteration</AltSectionTitle>
               </TitleBox>
@@ -443,7 +453,7 @@ export default class Pooler extends Component {
               <BrainSub>
                 <BrainSubText>
                   We also wanted to eventually work on short term ride-shares
-                  without competeing with services like Uber. We wanted to
+                  without competing with services like Uber. We wanted to
                   eliminate the need for the rideshare groups on Facebook and
                   look for more thrifty carpool options.
                 </BrainSubText>
@@ -475,14 +485,13 @@ export default class Pooler extends Component {
                 <DevelopImg src={final}></DevelopImg>
               </DevelopSection>
               <DevelopSecDesc>
-                {" "}
                 This project was a short sprint that Kevin and I wanted to
                 tackle. Although this project was meant to be finished in a
                 short amount of time, we had to make quick cut decisions for
                 every dilemma we came across to hand in a functional project.
                 React Native was definitely something I wanted to keep
                 exploring, each page felt more independent than it did on the
-                web which caused me to I run into problems dealing with data.
+                web which caused me to run into problems dealing with data.
               </DevelopSecDesc>
             </Development>
           </SubtleDiv>

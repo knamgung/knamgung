@@ -5,4 +5,6 @@ export const colors = {
   lightGreen: "#90A955",
   whiteGreen: "#ECF39E",
   hyperlink: "#016fb9",
+  design: "#77adff",
+  code: "#fdf51f",
 };

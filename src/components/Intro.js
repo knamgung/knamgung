@@ -25,7 +25,7 @@ const Heading = styled.h1`
 
 const Description = styled.p`
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   color: ${colors.lightGreen};
   line-height: 32px;
   margin-top: 24px;
@@ -44,10 +44,17 @@ const AltHeading = styled(Heading)`
 `;
 
 const ResumeLink = styled.a`
-  width: 240px;
+  width: 120px;
   color: ${colors.hyperlink};
   text-decoration: none;
   font-weight: 700;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+const DesignLink = styled(ResumeLink)`
+  width: 180px;
 `;
 const HeadingBox = styled.div`
   width: 25%;
@@ -86,6 +93,10 @@ const MyImage = styled.div`
     height: 250px;
   }
 `;
+
+const LinkDiv = styled.div`
+  display: flex;
+`;
 export default class Intro extends Component {
   render() {
     return (
@@ -98,14 +109,13 @@ export default class Intro extends Component {
         <AboutInfo>
           <DescDiv>
             <Description>
-              My name is Ken, and I am a graduate of a Web Development program
-              and a current interactive design student. Throughout my time at
-              Waterloo, I have been exposed to disciplines within the tech
-              industry that entice my interests. Design was the direction that I
-              sought out, however being around an environment of problem solvers
-              and innovators I wanted to educate myself further than design. I
-              want to design and create interactive products for pain points we
-              experience everyday in our lives!
+              Hi I'm Bean, or you can call me Ken! I am a Web Developer based in
+              Vancouver, BC.
+            </Description>
+            <Description>
+              I dedicate my time designing and developing products that are
+              dedicated to the user. I seek to solve uncharted human pain points
+              to resolve the continuous gaps in user experience.
             </Description>
             <Description>
               In my free time, I enjoy expressing artistry through involvement
@@ -113,12 +123,24 @@ export default class Intro extends Component {
               performances and instituting a positive and passionate environment
               for all levels of dancers and performers.
             </Description>
+            <Description>
+              Currently looking for full time opportunities!
+            </Description>
           </DescDiv>
           <MyImage></MyImage>
         </AboutInfo>
-        <ResumeLink href={resume} target="_blank" rel="noopener">
-          <p>Check out my resume!</p>
-        </ResumeLink>
+        <LinkDiv>
+          <ResumeLink href={resume} target="_blank" rel="noopener">
+            <p>My Resume!</p>
+          </ResumeLink>
+          <DesignLink
+            href="https://drive.google.com/drive/folders/1XMy7iLWXu5bmd8yWC9TSpXcOaF5pu_CU?usp=sharing"
+            target="_blank"
+            rel="noopener"
+          >
+            <p>My Design Drive</p>
+          </DesignLink>
+        </LinkDiv>
       </AboutDiv>
     );
   }

@@ -4,6 +4,8 @@ import styled from "styled-components";
 import preview from "../../images/subtle/subtle-preview.png";
 import problemSpace from "../../images/subtle/problem-space.png";
 import keyChallenges from "../../images/subtle/key-challenges.png";
+import demoDayImg from "../../images/subtle/demo-day.jpeg";
+
 import "../../util/styleReset.css";
 
 import Fade from "react-reveal/Fade";
@@ -72,7 +74,7 @@ const ProjectTag = styled.div`
   border-radius: 12px;
   width: 64px;
   height: 20px;
-  background-color: #fdf51f;
+  background-color: ${colors.code};
   margin-bottom: 4px;
   margin-left: 24px;
 `;
@@ -81,6 +83,7 @@ const ProjectTagName = styled.p`
   font-weight: 600;
   font-size: 10px;
   padding-top: 4px;
+  color: ${colors.darkGreen};
 `;
 
 const DescriptionHeader = styled.div`
@@ -130,7 +133,13 @@ const PreviewHeader = styled.div`
     margin-top: 40px;
   }
 `;
+const SectionDescription = styled.p`
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
 
+  }
+`;
 const PreviewImage = styled.img`
   width: 80%;
   height: auto;
@@ -145,46 +154,56 @@ const IdeationSection = styled.div``;
 const IdeationSub = styled.div`
   display: flex;
   margin-top: 50px;
-  justify-content: space-between;
+  flex-flow: column-reverse;
+  align-items: center;
 `;
-const IdeationSubText = styled.p`
-  font-size: 12px;
-  line-height: 24px;
-  font-weight: 600;
+const IdeationSubText = styled(SectionDescription)`
+  width: 100%;
 `;
 
 const ProblemSpace = styled.div`
-  width: 40%;
+  width: 100%;
   display: flex;
   flex-flow: column;
+  background-color: ${colors.mediumGreen};
+  padding: 12px 24px;
+  margin-top: 14px;
 `;
 
 const IdeationImg = styled.img`
   width: 50%;
+  margin: 40px 0;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 const KeyChallenges = styled(Ideation)``;
 
 const KeySection = styled.div`
   display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
+  flex-flow: column;
+  margin-top: 80px;
+  align-items: center;
 `;
 
-const KeyFirst = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-flow: column;
-`;
+const KeyFirst = styled.div``;
 const KeySecond = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  padding: 0 0 0 40px;
-  width: 70%;
+  padding: 12px 24px;
+  background-color: ${colors.mediumGreen};
+  width: 100%;
 `;
 
 const KeyImg = styled.img`
-  width: 80%;
+  margin: 40px 0;
+  width: 50%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 const SectionTitle = styled.h1`
   font-size: 24px;
@@ -194,23 +213,19 @@ const SectionTitle = styled.h1`
 
 const AltSectionTitle = styled(SectionTitle)``;
 
-const SectionDescription = styled.p`
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 24px;
-
-  }
-`;
-
 const TitleBox = styled.div`
   padding: 8px 12px;
   background-color: ${colors.sapGreen};
 
-  width: 35%;
+  width: 50%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Footer = styled.div`
-  background-color: black;
+  background-color: ${colors.sapGreen};
   display: flex;
   flex-flow: Column;
   align-items: center;
@@ -223,20 +238,22 @@ const Footer = styled.div`
 const FooterMsg = styled.p`
   font-weight: 700;
   margin: 0;
-  color: white;
+  color: ${colors.darkGreen};
 `;
 
 const FooterLink = styled.a`
   text-decoration: none;
   margin-bottom: 24px;
-  color: white;
+  color: ${colors.lightGreen};
 `;
 
 const FooterGit = styled(FooterLink)`
   font-weight: 700;
   margin: 0;
 
-  color: #fdf51f;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const KeyText = styled.p`
@@ -244,6 +261,27 @@ const KeyText = styled.p`
   line-height: 24px;
   font-size: 12px;
   margin-bottom: 24px;
+`;
+
+const DemoDay = styled.div``;
+
+const DemoSection = styled.div`
+  display: flex;
+  flex-flow: column;
+  margin-top: 80px;
+  align-items: center;
+`;
+const DemoImg = styled.img`
+  width: 55%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+const DemoDescription = styled.div`
+  width: 100%;
+  margin: 50px 0;
 `;
 
 export default class Subtle extends Component {
@@ -302,48 +340,59 @@ export default class Subtle extends Component {
               </PreviewHeader>
             </ProjectHeader>
 
-            <Ideation>
+            <Ideation
+              data-sal="fade"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <SectionTitle>Ideation</SectionTitle>
               <IdeationSection style={{ marginTop: "80px" }}>
-                <SectionDescription>
-                  Subtle was my first full stack project I worked on. While
-                  being in BrainStation, I had the privilige to learn in a
-                  environment surrounded by multiple “tech” disciplines. After
-                  networking with different classes one subject that caught my
-                  eye was Data Science. I was always interested in AI and
-                  machine learning, but I’ve never known the process or had a
-                  higher level of understanding on how it worked. I decided to
-                  pursue my capstone project with this in mind. Although I
-                  didn’t have the capabilities or resources to train my own
-                  model, I wanted to see how I can map out a model of data on my
-                  own.
-                </SectionDescription>
                 <IdeationSub>
                   <IdeationImg src={problemSpace}></IdeationImg>
-                  <ProblemSpace>
-                    <IdeationSubText>
-                      Aside from the tech, I wanted to showcase a final project
-                      thats reflected on my favourite interest, dancing. With
-                      the given time constraint and capabilties I had gone
-                      through 3/4 the course, I broke down each aspect of dance.
-                    </IdeationSubText>
-                    <IdeationSubText>
-                      At first I wanted to have an application that broke down
-                      and analyzed one’s dancing. However, the thought of
-                      dealing with motion and video data points was
-                      overwhelming. This is why I broke it down to 3 levels.
-                      Dance, Pose, and Pictures.
-                    </IdeationSubText>
-                    <IdeationSubText>
-                      Tackling the issue one by one helped me to get started and
-                      I intiated my project by focusing on pictures.
-                    </IdeationSubText>
-                  </ProblemSpace>
+                  <IdeationSubText>
+                    Subtle was my first full stack project I worked on. While
+                    being in BrainStation, I had the privilege to learn in an
+                    environment surrounded by multiple “tech” disciplines. After
+                    networking with different classes one subject that caught my
+                    eye was Data Science. I was always interested in AI and
+                    machine learning, but I’ve never known the process or had a
+                    higher level of understanding on how it worked. I decided to
+                    pursue my capstone project with this in mind. Although I
+                    didn’t have the capabilities or resources to train my own
+                    model, I wanted to see how I can map out a model of data on
+                    my own. We were given two weeks to complete this project
+                  </IdeationSubText>
                 </IdeationSub>
+
+                <ProblemSpace>
+                  <SectionDescription>
+                    Aside from the tech, I wanted to showcase a final project
+                    that reflected my favourite interest, dancing. There were
+                    only two weeks that I had to design, research, and code my
+                    project so I had to make quick decisions on what I actually
+                    wanted to make. gh 3/4 the course, I broke down each aspect
+                    of dance.
+                  </SectionDescription>
+                  <SectionDescription>
+                    At first I wanted to have an application that broke down and
+                    analyzed one’s dancing. However, working with detailed
+                    motion and video data points were out of my current
+                    capabilities. This is why I broke it down to 3 levels.
+                    Dance, Pose, and Pictures.
+                  </SectionDescription>
+                  <SectionDescription>
+                    Tackling the issue one by one helped me get started and
+                    initiated my project by focusing on pictures.
+                  </SectionDescription>
+                </ProblemSpace>
               </IdeationSection>
             </Ideation>
 
-            <KeyChallenges>
+            <KeyChallenges
+              data-sal="fade"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <TitleBox>
                 <AltSectionTitle>Key Challenges</AltSectionTitle>
               </TitleBox>
@@ -351,34 +400,35 @@ export default class Subtle extends Component {
                 <KeyFirst>
                   <SectionDescription>
                     BrainStation always pushed independent learning when it came
-                    to Web Development, and I realized its one of the most
+                    to Web Development, and I realized it's one of the most
                     important assets to have.
                   </SectionDescription>
                   <SectionDescription>
                     For my project. I had to venture and find the perfect
                     libraries I could use for Subtle and overcome these
-                    challenegs.
+                    challenges.
                   </SectionDescription>
-                  <KeyImg src={keyChallenges}></KeyImg>
                 </KeyFirst>
+                <KeyImg src={keyChallenges}></KeyImg>
+
                 <KeySecond>
                   <KeyText>
-                    1. GraphQL Being used to SQL and computational programming,
-                    I wanted to use GraphQL as part of my backend. As a GBDA
-                    student, it’s hard to find opportunities to code and there’s
-                    no opportunities to learn about Object Oriented Programming.
-                    GraphQL taught me a lot about data organization, and a new
-                    definition to perceive Objects
+                    1. GraphQL | Being used to SQL and computational
+                    programming, I wanted to use GraphQL as part of my backend.
+                    As a GBDA student, it’s hard to find opportunities to code
+                    and there’s no opportunities to learn about Object Oriented
+                    Programming. GraphQL taught me a lot about data
+                    organization, and a new definition to perceive Objects
                   </KeyText>
                   <KeyText>
-                    2. P5.js Having learned creative coding in GBDA, I was
+                    2. P5.js | Having learned creative coding in GBDA, I was
                     excited to find a processing version for javascript. I was
                     already familiar with this library, and they provided a
                     great play- ground to test out. However, I did struggle
                     quite a bit integrating media frames into my project.
                   </KeyText>
                   <KeyText>
-                    3. Files I had no idea how to code a file upload
+                    3. Files | I had no idea how to code a file upload
                     interaction. After getting the pop up to appear which
                     apparently was the easier part, it was a mess of asychronous
                     code I had to manage for it to function within my
@@ -388,6 +438,28 @@ export default class Subtle extends Component {
                 </KeySecond>
               </KeySection>
             </KeyChallenges>
+
+            <DemoDay>
+              <SectionTitle>Demo Day</SectionTitle>
+              <DemoSection>
+                <DemoImg src={demoDayImg}></DemoImg>
+                <DemoDescription>
+                  <SectionDescription>
+                    After two weeks, demo day arrived and I was extremely
+                    nervous to showcase my project. BrainStation had invited
+                    industry recruiters and BrainStation alumni to help us
+                    network with professionals.
+                  </SectionDescription>
+                  <SectionDescription>
+                    The reaction my project got from the staff and the guests
+                    were overwhelmingly positive. I had the opportunity to
+                    connect with employers from Vega, PeaceGeeks, Amazon, EA and
+                    more! The BrainStation experience gave me the confidence to
+                    know that my career was just beginning.
+                  </SectionDescription>
+                </DemoDescription>
+              </DemoSection>
+            </DemoDay>
           </SubtleDiv>
         </MainPage>
         <Footer>

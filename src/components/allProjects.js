@@ -96,7 +96,8 @@ const ProjectTag = styled.div`
   border-radius: 12px;
   width: 64px;
   height: 20px;
-  background-color: #fdf51f;
+  background-color: ${(props) =>
+    props.subject === "CODE" ? `${colors.code}` : `${colors.design}`};
   margin-bottom: 4px;
 `;
 
@@ -105,6 +106,7 @@ const ProjectTagName = styled.p`
   font-weight: 600;
   font-size: 10px;
   padding-top: 4px;
+  color: ${colors.darkGreen};
 `;
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -165,7 +167,7 @@ export default class AllProjects extends Component {
               <ProjectTitleDiv>
                 <ProjecTitle>{title}</ProjecTitle>
                 <ProjectTagDiv>
-                  <ProjectTag>
+                  <ProjectTag subject={subject}>
                     <ProjectTagName>{subject}</ProjectTagName>
                   </ProjectTag>
                 </ProjectTagDiv>
