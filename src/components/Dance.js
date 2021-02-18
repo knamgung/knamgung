@@ -16,6 +16,10 @@ const AltHeading = styled.h1`
   font-size: 24px;
   color: ${colors.whiteGreen};
   padding-top: 4px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const HeadingBox = styled.div`

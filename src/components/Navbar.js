@@ -48,12 +48,18 @@ const Logo = styled.h1`
   font-weight: 800;
   letter-spacing: -4px;
   font-size: 28px;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 const Navlink = styled.h3`
   font-weight: 500;
   font-size: 16px;
   margin-left: 32px;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 export default class NavigationBar extends Component {

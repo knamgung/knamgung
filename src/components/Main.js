@@ -51,8 +51,10 @@ const HeroIntro = styled.p`
 `;
 
 const IntroMessage = styled.p`
-  color: white;
+  color: ${colors.whiteGreen};
+  font-family: "IBM Plex Mono", monospace;
   margin-top: 100px;
+  margin-bottom: 24px;
   font-size: 12px;
   font-weight: 100;
 `;
@@ -95,6 +97,9 @@ const Author = styled.a`
   justify-content: center;
   margin-top: 150px;
   cursor: default;
+  @media (max-width: 768px) {
+    margin-top: 50px;
+  }
 `;
 
 const AuthorText = styled.p`
@@ -130,7 +135,7 @@ export default class Main extends Component {
             </BioButton>
           </Fade>
         </MainDiv>
-        <Fade bottom delay={2000}>
+        <Fade bottom delay={1500}>
           <Author
             href="https://github.com/knamgung/knamgung"
             rel="noopener"

@@ -56,11 +56,12 @@ const EachJob = styled.button`
       props.company === props.state
         ? `1.5px solid ${colors.lightGreen};`
         : "none"};
+    font-size: 12px;
   }
 
   &:hover {
     background-color: ${colors.mediumGreen};
-    transition: 1s;
+    transition: 0.5s;
   }
 `;
 
@@ -94,6 +95,7 @@ const JobDescription = styled.div`
   @media (max-width: 768px) {
     margin-top: 32px;
     width: 100%;
+    height: auto;
   }
 `;
 
@@ -182,8 +184,12 @@ function Faire() {
   return (
     <JobDescription>
       <Fade bottom>
-        <JobTitle>Front-End 'React' Engineer [Co-op]</JobTitle>
-        <JobCompany href="https://www.faire.com/" target="_blank">
+        <JobTitle>Front-End 'React' Engineer</JobTitle>
+        <JobCompany
+          href="https://www.faire.com/"
+          target="_blank"
+          rel="noopener"
+        >
           Faire
         </JobCompany>
         <Dates>Waterloo, ON May. 2020 - August 2020</Dates>
@@ -241,6 +247,7 @@ function Limelight() {
         <JobCompany
           href="https://www.youtube.com/channel/UC40GdqVnIsD23o_5fYvy3dQ"
           target="_blank"
+          rel="noopener"
         >
           Limelight Dance Crew
         </JobCompany>
@@ -275,7 +282,11 @@ function FC() {
     <JobDescription>
       <Fade bottom>
         <JobTitle>Motion Graphic Designer</JobTitle>
-        <JobCompany href="https://fashionforchange.ca/" target="_blank">
+        <JobCompany
+          href="https://fashionforchange.ca/"
+          target="_blank"
+          rel="noopener"
+        >
           Fashion For Change
         </JobCompany>
         <Dates>Waterloo, ON Oct 2018 - April 2019</Dates>
