@@ -206,7 +206,7 @@ export default class AllProjects extends Component {
               active={projectFilter === "CODE"}
               onClick={() => this.setState({ projectFilter: "CODE" })}
             >
-              CODING
+              code
             </FilterButton>
           </FilterButtonDiv>
         </Fade>
