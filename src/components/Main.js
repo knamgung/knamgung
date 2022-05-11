@@ -8,11 +8,11 @@ import { colors } from "../util/Colors";
 import Fade from "react-reveal/Fade";
 const fadeIn = keyframes`
   0% {
-    display: none;
+    opacity: 0
   }
 
   100% {
-    display: flex;
+    opacity: 1
   }
 `;
 const MainDiv = styled.div`
@@ -136,7 +136,7 @@ export default class Main extends Component {
             <Fade cascade duration={3000} delay={1000}>
               <IntroMessage>Hello~ My name is</IntroMessage>
             </Fade>
-            <Fade cascade duration={1000} delay={1000}>
+            <Fade left cascade duration={1000} delay={1000}>
               <Heading>Bean Namgung</Heading>
               <HeroIntro>
                 I also go by <IntroSpan>Ken!</IntroSpan> I am a React developer
