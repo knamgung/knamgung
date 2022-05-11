@@ -6,7 +6,17 @@ import resume from "../resources/resume.pdf";
 import hero from "../images/hero-green.png";
 import { colors } from "../util/Colors";
 import Fade from "react-reveal/Fade";
-
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
 const MainDiv = styled.div`
   height: 600px;
 
@@ -19,6 +29,7 @@ const MainDiv = styled.div`
   background-position: right bottom;
   background-size: 55%;
   font-family: "Spartan", sans-serif;
+  animation: ${fadeIn} 1s ease-in;
 
   @media (max-width: 768px) {
     background-size: 65%;
@@ -114,17 +125,9 @@ const AuthorText = styled.p`
     transition: 1s;
   }
 `;
-const fadeIn = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-`;
+
 const Wrapper = styled.div`
-  animation-name: ${fadeIn}
-  animation-duration: 10s;
+  animation: ${fadeIn} 1s ease-in;
 `;
 export default class Main extends Component {
   render() {
