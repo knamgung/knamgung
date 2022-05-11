@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
 import resume from "../resources/resume.pdf";
 
 import hero from "../images/hero-green.png";
@@ -113,27 +114,41 @@ const AuthorText = styled.p`
     transition: 1s;
   }
 `;
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+const Wrapper = styled.div`
+  animation-name: ${fadeIn}
+  animation-duration: 1s;
+`;
 export default class Main extends Component {
   render() {
     return (
       <>
         <MainDiv>
-          <Fade cascade duration={3000}>
-            <IntroMessage>Hello~ My name is</IntroMessage>
-          </Fade>
-          <Fade left cascade duration={1000}>
-            <Heading>Bean Namgung</Heading>
-            <HeroIntro>
-              I also go by <IntroSpan>Ken!</IntroSpan> I am a React developer
-              based in Vancouver, BC pursuing to build
-              <IntroSpan> beautiful</IntroSpan>,
-              <IntroSpan> responsive</IntroSpan>, and
-              <IntroSpan> user-friendly</IntroSpan> application.
-            </HeroIntro>
-            <BioButton href={resume} target="_blank" rel="noopener">
-              <ButtonTitle>My Resume</ButtonTitle>
-            </BioButton>
-          </Fade>
+          <Wrapper>
+            <Fade cascade duration={3000}>
+              <IntroMessage>Hello~ My name is</IntroMessage>
+            </Fade>
+            <Fade left cascade duration={1000}>
+              <Heading>Bean Namgung</Heading>
+              <HeroIntro>
+                I also go by <IntroSpan>Ken!</IntroSpan> I am a React developer
+                based in Vancouver, BC pursuing to build
+                <IntroSpan> beautiful</IntroSpan>,
+                <IntroSpan> responsive</IntroSpan>, and
+                <IntroSpan> user-friendly</IntroSpan> application.
+              </HeroIntro>
+              <BioButton href={resume} target="_blank" rel="noopener">
+                <ButtonTitle>My Resume</ButtonTitle>
+              </BioButton>
+            </Fade>
+          </Wrapper>
         </MainDiv>
         <Fade bottom delay={1500}>
           <Author
