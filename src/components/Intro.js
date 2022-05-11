@@ -100,7 +100,7 @@ const LinkDiv = styled.div`
 export default class Intro extends Component {
   render() {
     return (
-      <AboutDiv data-sal="fade" data-sal-duration="1000" data-sal-easing="ease">
+      <AboutDiv>
         <Slide left duration={1000}>
           <HeadingBox>
             <AltHeading>Hello!</AltHeading>

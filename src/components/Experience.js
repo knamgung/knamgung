@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { colors } from "../util/Colors";
 import "../util/styleReset.css";
 import Fade from "react-reveal/Fade";
+import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 
 const ExperienceWrapper = styled.div`
   margin: 200px 0 240px 0;
@@ -20,7 +21,7 @@ const Experiences = styled.div`
   }
 `;
 
-const JobList = styled.div`
+const JobList = styled(Parallax)`
   display: flex;
   flex-flow: column;
   width: 20%;
@@ -88,7 +89,7 @@ const Dates = styled.p`
   font-size: 10px;
   color: white;
 `;
-const JobDescription = styled.div`
+const JobDescription = styled(Parallax)`
   width: 70%;
   height: 400px;
 
@@ -127,15 +128,11 @@ export default class Experience extends Component {
   render() {
     const { currentJob } = this.state;
     return (
-      <ExperienceWrapper
-        data-sal="fade"
-        data-sal-duration="1000"
-        data-sal-easing="ease"
-      >
+      <ExperienceWrapper>
         <Heading>Experience</Heading>
 
         <Experiences>
-          <JobList>
+          <JobList speed={-5}>
             <EachJob
               company="Faire"
               onClick={() => this.setState({ currentJob: "Faire" })}
@@ -182,7 +179,7 @@ export default class Experience extends Component {
 
 function Faire() {
   return (
-    <JobDescription>
+    <JobDescription speed={25}>
       <Fade bottom>
         <JobTitle>Front-End 'React' Engineer</JobTitle>
         <JobCompany
@@ -241,7 +238,7 @@ function Faire() {
 
 function Limelight() {
   return (
-    <JobDescription>
+    <JobDescription speed={25}>
       <Fade bottom>
         <JobTitle>Director</JobTitle>
         <JobCompany
@@ -279,7 +276,7 @@ function Limelight() {
 
 function FC() {
   return (
-    <JobDescription>
+    <JobDescription speed={10}>
       <Fade bottom>
         <JobTitle>Motion Graphic Designer</JobTitle>
         <JobCompany
@@ -316,7 +313,7 @@ function FC() {
 
 function UWHH() {
   return (
-    <JobDescription>
+    <JobDescription speed={25}>
       <Fade bottom>
         <JobTitle>Performance Director</JobTitle>
         <JobCompany

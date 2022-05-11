@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
 
 import resume from "../resources/resume.pdf";
+import { Parallax } from "react-scroll-parallax";
 
 import hero from "../images/hero-green.png";
 import { colors } from "../util/Colors";
@@ -133,22 +134,25 @@ export default class Main extends Component {
       <>
         <MainDiv>
           <Wrapper>
-            <Fade cascade duration={3000} delay={1000}>
-              <IntroMessage>Hello~ My name is</IntroMessage>
-            </Fade>
-            <Fade left cascade duration={1000} delay={1000}>
-              <Heading>Bean Namgung</Heading>
-              <HeroIntro>
-                I also go by <IntroSpan>Ken!</IntroSpan> I am a React developer
-                based in Vancouver, BC pursuing to build
-                <IntroSpan> beautiful</IntroSpan>,
-                <IntroSpan> responsive</IntroSpan>, and
-                <IntroSpan> user-friendly</IntroSpan> application.
-              </HeroIntro>
-              <BioButton href={resume} target="_blank" rel="noopener">
-                <ButtonTitle>My Resume</ButtonTitle>
-              </BioButton>
-            </Fade>
+            <Parallax speed={30} translateY={[20, -10]}>
+              <Fade cascade duration={3000} delay={1000}>
+                <IntroMessage>Hello~ My name is</IntroMessage>
+              </Fade>
+              <Fade left cascade duration={1000} delay={1000}>
+                <Heading>Bean Namgung</Heading>
+                <HeroIntro>
+                  I also go by <IntroSpan>Ken!</IntroSpan> I am a React
+                  developer based in Vancouver, BC pursuing to build
+                  <IntroSpan> beautiful</IntroSpan>,
+                  <IntroSpan> responsive</IntroSpan>, and
+                  <IntroSpan> user-friendly</IntroSpan> application.
+                </HeroIntro>
+
+                <BioButton href={resume} target="_blank" rel="noopener">
+                  <ButtonTitle>My Resume</ButtonTitle>
+                </BioButton>
+              </Fade>
+            </Parallax>
           </Wrapper>
         </MainDiv>
         <Fade bottom delay={1500}>
