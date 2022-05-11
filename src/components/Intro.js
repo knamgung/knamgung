@@ -4,6 +4,7 @@ import resume from "../resources/resume.pdf";
 import me from "../images/me.jpg";
 import { colors } from "../util/Colors";
 import Slide from "react-reveal/Slide";
+import { Parallax } from "react-scroll-parallax";
 
 const AboutDiv = styled.div`
   width: 100%;
