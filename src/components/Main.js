@@ -124,7 +124,7 @@ const fadeIn = keyframes`
 `;
 const Wrapper = styled.div`
   animation-name: ${fadeIn}
-  animation-duration: 1s;
+  animation-duration: 10s;
 `;
 export default class Main extends Component {
   render() {
@@ -132,10 +132,10 @@ export default class Main extends Component {
       <>
         <MainDiv>
           <Wrapper>
-            <Fade cascade duration={3000}>
+            <Fade cascade duration={3000} delay={1000}>
               <IntroMessage>Hello~ My name is</IntroMessage>
             </Fade>
-            <Fade left cascade duration={1000}>
+            <Fade left cascade duration={1000} delay={1000}>
               <Heading>Bean Namgung</Heading>
               <HeroIntro>
                 I also go by <IntroSpan>Ken!</IntroSpan> I am a React developer
