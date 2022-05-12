@@ -1,34 +1,33 @@
 import React, { Component } from "react";
-import NavigationBar from "../../components/Navbar.js";
 import styled from "styled-components";
-import intro from "../../images/AWAIR/intro.png";
-import logo from "../../images/AWAIR/logo.png";
-import BigIdeaSummary from "../../images/AWAIR/Bigideasummary.png";
-import HeroImage from "../../images/AWAIR/HeroImage.png";
+import intro from "../images/AWAIR/intro.png";
+import logo from "../images/AWAIR/logo.png";
+import BigIdeaSummary from "../images/AWAIR/Bigideasummary.png";
+import HeroImage from "../images/AWAIR/HeroImage.png";
 
-import GreenBoard from "../../images/AWAIR/Proposal-Boards2.png";
-import YellowBoard from "../../images/AWAIR/Proposal-Boards.png";
-import BlueBoard from "../../images/AWAIR/Proposal-Boards3.png";
+import GreenBoard from "../images/AWAIR/Proposal-Boards2.png";
+import YellowBoard from "../images/AWAIR/Proposal-Boards.png";
+import BlueBoard from "../images/AWAIR/Proposal-Boards3.png";
 
-import PurpleBoard from "../../images/AWAIR/Proposal-Boards4.png";
+import PurpleBoard from "../images/AWAIR/Proposal-Boards4.png";
 
 import Vimeo from "@u-wave/react-vimeo";
-import Instagram from "../../icons/instagram.js";
-import Website from "../../icons/website.js";
+import Instagram from "../icons/instagram.js";
+import Website from "../icons/website.js";
 
-import "../../util/styleReset.css";
+import "../util/styleReset.css";
 
 import ScrollMenu from "react-horizontal-scrolling-menu";
-import fullPropBoard from "../../resources/ProposalBoards.pdf";
-import businessModelCanvas from "../../images/AWAIR/BMC.png";
+import fullPropBoard from "../resources/ProposalBoards.pdf";
+import businessModelCanvas from "../images/AWAIR/BMC.png";
 
-import bmcFile from "../../resources/BMC.pdf";
-import financeFile from "../../resources/Financial.pdf";
+import bmcFile from "../resources/BMC.pdf";
+import financeFile from "../resources/Financial.pdf";
 
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
 
-import { colors } from "../../util/Colors";
+import { colors } from "../util/Colors";
 
 const MainPage = styled.main`
   color: ${colors.lightGreen};
@@ -596,7 +595,6 @@ export default class AWAIR extends Component {
     return (
       <>
         <MainPage>
-          <NavigationBar></NavigationBar>
           <SubtleDiv>
             <ProjectHeader>
               <DescriptionHeader>

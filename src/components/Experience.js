@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { colors } from "../util/Colors";
 import "../util/styleReset.css";
 import Fade from "react-reveal/Fade";
-import { Parallax, ParallaxProvider } from "react-scroll-parallax";
+import { Parallax } from "react-scroll-parallax";
 
 const ExperienceWrapper = styled.div`
   margin: 200px 0 240px 0;
@@ -111,7 +111,7 @@ const JobText = styled.p`
 
 const JobPoints = styled.div`
   display: flex;
-  margin: 64px 0;
+  margin: 42px 0;
   align-items: flex-start;
 `;
 const Heading = styled.h1`
@@ -122,7 +122,7 @@ const Heading = styled.h1`
 `;
 export default class Experience extends Component {
   state = {
-    currentJob: "Faire",
+    currentJob: "The Reframe Group",
   };
 
   render() {
@@ -132,7 +132,14 @@ export default class Experience extends Component {
         <Heading>Experience</Heading>
 
         <Experiences>
-          <JobList speed={-5}>
+          <JobList speed={5} easing="easeOut" translateY={[-10, 10]}>
+            <EachJob
+              company="The Reframe Group"
+              onClick={() => this.setState({ currentJob: "The Reframe Group" })}
+              state={currentJob}
+            >
+              The Reframe Group
+            </EachJob>
             <EachJob
               company="Faire"
               onClick={() => this.setState({ currentJob: "Faire" })}
@@ -162,7 +169,9 @@ export default class Experience extends Component {
               UW Hip Hop
             </EachJob>
           </JobList>
-          {currentJob === "Faire" ? (
+          {currentJob === "The Reframe Group" ? (
+            <Reframe></Reframe>
+          ) : currentJob === "Faire" ? (
             <Faire></Faire>
           ) : currentJob === "Limelight" ? (
             <Limelight></Limelight>
@@ -176,10 +185,71 @@ export default class Experience extends Component {
     );
   }
 }
+function Reframe() {
+  return (
+    <JobDescription speed={-5}>
+      <Fade bottom>
+        <JobTitle>Full Stack Developer</JobTitle>
+        <JobCompany
+          href="https://reframeinsurance.ca/"
+          target="_blank"
+          rel="noopener"
+        >
+          The ReFrame Group
+        </JobCompany>
+        <Dates>Vancouver, BC June. 2021 - Current</Dates>
+
+        <JobPoints>
+          <span role="img" aria-label="plant-emoji">
+            🌱
+          </span>
+          <JobText>
+            Delegated with the designer and financial advisors to devise a
+            Financial Planning Software aimed to alleviate the pain point of the
+            lack of education in financial literacy
+          </JobText>
+        </JobPoints>
+
+        <JobPoints>
+          <span role="img" aria-label="plant-emoji">
+            🌱
+          </span>
+          <JobText>
+            Developed front-end pages and reusable components written in React
+            and Redux. Integrated backend REST API to front-end components using
+            Axios with JWT Authentication
+          </JobText>
+        </JobPoints>
+
+        <JobPoints>
+          <span role="img" aria-label="plant-emoji">
+            🌱
+          </span>
+          <JobText>
+            Established a secure SMTP server for client emails and built a
+            Amazon S3 bucket for object storage using methods under a Python
+            Flask framework to view, download, and delete files.
+          </JobText>
+        </JobPoints>
+
+        <JobPoints>
+          <span role="img" aria-label="plant-emoji">
+            🌱
+          </span>
+          <JobText>
+            Implemented a series of APIs performing countless of financial
+            calculations to provide users on the front end with comprehensive
+            visual representation of their financial well-being
+          </JobText>
+        </JobPoints>
+      </Fade>
+    </JobDescription>
+  );
+}
 
 function Faire() {
   return (
-    <JobDescription speed={25}>
+    <JobDescription speed={-5}>
       <Fade bottom>
         <JobTitle>Front-End 'React' Engineer</JobTitle>
         <JobCompany
@@ -238,7 +308,7 @@ function Faire() {
 
 function Limelight() {
   return (
-    <JobDescription speed={25}>
+    <JobDescription speed={-5}>
       <Fade bottom>
         <JobTitle>Director</JobTitle>
         <JobCompany
@@ -276,7 +346,7 @@ function Limelight() {
 
 function FC() {
   return (
-    <JobDescription speed={10}>
+    <JobDescription speed={-5}>
       <Fade bottom>
         <JobTitle>Motion Graphic Designer</JobTitle>
         <JobCompany
@@ -313,7 +383,7 @@ function FC() {
 
 function UWHH() {
   return (
-    <JobDescription speed={25}>
+    <JobDescription speed={-5}>
       <Fade bottom>
         <JobTitle>Performance Director</JobTitle>
         <JobCompany

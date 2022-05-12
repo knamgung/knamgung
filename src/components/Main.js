@@ -3,10 +3,14 @@ import styled, { keyframes } from "styled-components";
 
 import resume from "../resources/resume.pdf";
 import { Parallax } from "react-scroll-parallax";
-
+import DownArrow from "../icons/downArrow";
 import hero from "../images/hero-green.png";
 import { colors } from "../util/Colors";
 import Fade from "react-reveal/Fade";
+import Github from "../icons/github";
+import Linkedin from "../icons/linkedin";
+import Spacer from "react-spacer";
+
 const fadeIn = keyframes`
   0% {
     opacity: 0
@@ -97,7 +101,10 @@ const ButtonTitle = styled.h5`
   font-family: "Spartan";
   color: ${colors.lightGreen};
 `;
-
+const NavWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
 const Author = styled.a`
   text-align: center;
 
@@ -118,11 +125,19 @@ const AuthorText = styled.p`
 
   font-size: 12px;
   cursor: pointer;
+  animation: ${fadeIn} 1s ease-in;
 
   &:hover {
     color: ${colors.whiteGreen};
     transition: 1s;
   }
+`;
+
+const ScrollDown = styled.div`
+  position: absolute;
+  left: 48%;
+  bottom: 50px;
+  animation: ${fadeIn} 2s ease-in;
 `;
 
 const Wrapper = styled.div`
@@ -134,7 +149,7 @@ export default class Main extends Component {
       <>
         <MainDiv>
           <Wrapper>
-            <Parallax speed={30} translateY={[20, -10]}>
+            <Parallax speed={-5} easing="easeInOut">
               <Fade cascade duration={3000} delay={1000}>
                 <IntroMessage>Hello~ My name is</IntroMessage>
               </Fade>
@@ -146,6 +161,12 @@ export default class Main extends Component {
                   <IntroSpan> beautiful</IntroSpan>,
                   <IntroSpan> responsive</IntroSpan>, and
                   <IntroSpan> user-friendly</IntroSpan> application.
+                  <Spacer height="20px" />
+                  <NavWrapper>
+                    <Github className="github"></Github>
+                    <Spacer width="8px" />
+                    <Linkedin className="linked-in"></Linkedin>
+                  </NavWrapper>
                 </HeroIntro>
 
                 <BioButton href={resume} target="_blank" rel="noopener">
@@ -155,21 +176,30 @@ export default class Main extends Component {
             </Parallax>
           </Wrapper>
         </MainDiv>
+
         <Fade bottom delay={1500}>
           <Author
             href="https://github.com/knamgung/knamgung"
             rel="noopener"
             target="_blank"
           >
-            <AuthorText>
-              Designed & Made by Bean Namgung
-              <span role="img" aria-label="plant-emoji">
-                {" "}
-                🌱
-              </span>
-            </AuthorText>
+            <Parallax speed={2} easing="easeIn">
+              <AuthorText>
+                Designed & Made by Bean Namgung
+                <span role="img" aria-label="plant-emoji">
+                  {" "}
+                  🌱
+                </span>
+              </AuthorText>
+            </Parallax>
           </Author>
         </Fade>
+
+        <ScrollDown>
+          <Fade delay={3500}>
+            <DownArrow></DownArrow>
+          </Fade>
+        </ScrollDown>
       </>
     );
   }

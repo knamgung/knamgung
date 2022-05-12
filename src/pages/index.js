@@ -1,5 +1,4 @@
 import * as React from "react";
-import NavigationBar from "../components/Navbar.js";
 import styled from "styled-components";
 import Main from "../components/Main.js";
 import "../util/styleReset.css";
@@ -8,10 +7,7 @@ import { Helmet } from "react-helmet";
 import { ParallaxProvider } from "react-scroll-parallax";
 import Intro from "../components/Intro.js";
 import Experience from "../components/Experience.js";
-import Dance from "../components/Dance.js";
-import { Parallax } from "react-scroll-parallax";
-import AllProjects from "../components/allProjects.js";
-
+import AllProjects from "../components/allProjects";
 // styles
 const MainPage = styled.main`
   color: "#232129";
@@ -19,8 +15,6 @@ const MainPage = styled.main`
   margin: 0;
   padding: 0 320px;
   font-family: "Spartan", sans-serif;
-
-  margin-top: 64px;
 
   @media (max-width: 1280px) {
     padding: 0 112px;
@@ -32,7 +26,18 @@ const MainPage = styled.main`
 `;
 
 const Section = styled.div`
-  margin: 300px 0 300px 0;
+  margin-top: 420px;
+  margin-bottom: 200px;
+
+  @media (max-width: 1280px) {
+    margin-top: 200px;
+    margin-bottom: 200px;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 100px;
+    margin-bottom: 200px;
+  }
 `;
 
 // markup
@@ -46,7 +51,6 @@ const IndexPage = () => {
           <link rel="canonical" href="https://namgung.ca/" />
           <link rel="icon" href={favicon} />
         </Helmet>
-        <NavigationBar />
         <Main></Main>
         <Section>
           <Experience></Experience>
@@ -54,6 +58,7 @@ const IndexPage = () => {
         <Section>
           <Intro></Intro>
         </Section>
+
         <Section>
           <AllProjects></AllProjects>
         </Section>

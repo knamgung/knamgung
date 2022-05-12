@@ -57,7 +57,7 @@ const ResumeLink = styled.a`
 const DesignLink = styled(ResumeLink)`
   width: 180px;
 `;
-const HeadingBox = styled.div`
+const HeadingBox = styled(Parallax)`
   width: 25%;
   padding: 8px 12px;
   background-color: ${colors.sapGreen};
@@ -72,7 +72,7 @@ const HeadingBox = styled.div`
   }
 `;
 
-const AboutInfo = styled.div`
+const AboutInfo = styled(Parallax)`
   display: flex;
   @media (max-width: 768px) {
     flex-flow: column-reverse;
@@ -80,7 +80,7 @@ const AboutInfo = styled.div`
   }
 `;
 
-const MyImage = styled.div`
+const MyImage = styled(Parallax)`
   width: 200px;
   margin-left: 80px;
   background-image: url(${me});
@@ -95,7 +95,7 @@ const MyImage = styled.div`
   }
 `;
 
-const LinkDiv = styled.div`
+const LinkDiv = styled(Parallax)`
   display: flex;
 `;
 export default class Intro extends Component {
@@ -107,7 +107,7 @@ export default class Intro extends Component {
             <AltHeading>Hello!</AltHeading>
           </HeadingBox>
         </Slide>
-        <AboutInfo>
+        <AboutInfo speed={5} translateY={[-5, 5]}>
           <DescDiv>
             <Description>
               Hi I'm Bean, or you can call me Ken! I am a Web Developer based in
@@ -128,9 +128,9 @@ export default class Intro extends Component {
               Currently looking for full time opportunities!
             </Description>
           </DescDiv>
-          <MyImage></MyImage>
+          <MyImage speed={-5}></MyImage>
         </AboutInfo>
-        <LinkDiv>
+        <LinkDiv speed={10} translateY={[-20, 0]}>
           <ResumeLink href={resume} target="_blank" rel="noopener">
             <p>My Resume!</p>
           </ResumeLink>

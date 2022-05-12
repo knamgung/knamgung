@@ -5622,6 +5622,13 @@
     "lodash" "^4.17.20"
     "micromatch" "^4.0.2"
 
+"gatsby-plugin-anchor-links@^1.2.1":
+  "integrity" "sha512-BIhhljCxIUVluMltlCq5sKvVN9PfwqoUNaTjyPZUhtEu5JhEiK89HPNustSkjSLhnQmcYveS36TpjWK/rUnvhg=="
+  "resolved" "https://registry.npmjs.org/gatsby-plugin-anchor-links/-/gatsby-plugin-anchor-links-1.2.1.tgz"
+  "version" "1.2.1"
+  dependencies:
+    "scroll-to-element" "^2.0.3"
+
 "gatsby-plugin-page-creator@^2.10.2":
   "integrity" "sha512-XkHSOgI4ZPA4XgadjGGFSp4eu51G8HXEVKG5gaef1/w0bcktw+aEwgEyb8VtL61NfIH2zXquyvrmwsil89nVCw=="
   "resolved" "https://registry.npmjs.org/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.10.2.tgz"
@@ -9371,6 +9378,11 @@
     "safe-buffer" "^5.0.1"
     "sha.js" "^2.4.8"
 
+"performance-now@^2.1.0":
+  "integrity" "sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns="
+  "resolved" "https://registry.npmjs.org/performance-now/-/performance-now-2.1.0.tgz"
+  "version" "2.1.0"
+
 "physical-cpu-count@^2.0.0":
   "integrity" "sha1-GN4vl+S/epVRrXURlCtUlverpmA="
   "resolved" "https://registry.npmjs.org/physical-cpu-count/-/physical-cpu-count-2.0.0.tgz"
@@ -10060,6 +10072,13 @@
   "integrity" "sha512-FIqgj2EUvTa7R50u0rGsyTftzjYmv/a3hO345bZNrqabNqjtgiDMgmo4mkUjd+nzU5oF3dClKqFIPUKybUyqoQ=="
   "resolved" "https://registry.npmjs.org/querystringify/-/querystringify-2.2.0.tgz"
   "version" "2.2.0"
+
+"raf@^3.4.0":
+  "integrity" "sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA=="
+  "resolved" "https://registry.npmjs.org/raf/-/raf-3.4.1.tgz"
+  "version" "3.4.1"
+  dependencies:
+    "performance-now" "^2.1.0"
 
 "randombytes@^2.0.0", "randombytes@^2.0.1", "randombytes@^2.0.5", "randombytes@^2.1.0":
   "integrity" "sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ=="
@@ -10843,6 +10862,13 @@
     "@types/json-schema" "^7.0.5"
     "ajv" "^6.12.4"
     "ajv-keywords" "^3.5.2"
+
+"scroll-to-element@^2.0.3":
+  "integrity" "sha512-5herPcm9jMfQgRwu94lH5mei+2YhipR4RQ2nAvnBxJb2tG+P7O0ctOKAaAZBXbBejnn+MImh3wrAUA5EcLnjEQ=="
+  "resolved" "https://registry.npmjs.org/scroll-to-element/-/scroll-to-element-2.0.3.tgz"
+  "version" "2.0.3"
+  dependencies:
+    "raf" "^3.4.0"
 
 "select-hose@^2.0.0":
   "integrity" "sha1-Yl2GWPhlr0Psliv8N2o3NZpJlMo="

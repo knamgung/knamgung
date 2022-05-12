@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import { colors } from "../util/Colors";
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
+import { Parallax } from "react-scroll-parallax";
 
 const AllProjectDiv = styled.div`
   height: 600px;
@@ -51,7 +52,7 @@ const Heading = styled.h1`
   margin-top: 0;
 `;
 
-const ProjectAll = styled.div`
+const ProjectAll = styled(Parallax)`
   width: 100%;
   margin-top: 64px;
   display: flex;
@@ -183,7 +184,7 @@ export default class AllProjects extends Component {
   render() {
     const { projectFilter } = this.state;
     return (
-      <AllProjectDiv>
+      <AllProjectDiv speed={-5}>
         <Slide left duration={1000}>
           <Heading>Projects</Heading>
         </Slide>
@@ -211,7 +212,7 @@ export default class AllProjects extends Component {
           </FilterButtonDiv>
         </Fade>
         <Fade duration={2000}>
-          <ProjectAll>{this.renderProjects()}</ProjectAll>
+          <ProjectAll speed={-5}>{this.renderProjects()}</ProjectAll>
         </Fade>
       </AllProjectDiv>
     );
