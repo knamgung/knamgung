@@ -1,17 +1,16 @@
 import React, { Component } from "react";
-import NavigationBar from "../../components/Navbar.js";
 import styled from "styled-components";
-import preview from "../../images/subtle/subtle-preview.png";
-import problemSpace from "../../images/subtle/problem-space.png";
-import keyChallenges from "../../images/subtle/key-challenges.png";
-import demoDayImg from "../../images/subtle/demo-day.jpeg";
+import preview from "../images/subtle/subtle-preview.png";
+import problemSpace from "../images/subtle/problem-space.png";
+import keyChallenges from "../images/subtle/key-challenges.png";
+import demoDayImg from "../images/subtle/demo-day.jpeg";
 
-import "../../util/styleReset.css";
+import "../util/styleReset.css";
 
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
 
-import { colors } from "../../util/Colors";
+import { colors } from "../util/Colors";
 const MainPage = styled.main`
   color: ${colors.lightGreen};
   width: 100%;
@@ -289,7 +288,6 @@ export default class Subtle extends Component {
     return (
       <>
         <MainPage>
-          <NavigationBar></NavigationBar>
           <SubtleDiv>
             <ProjectHeader>
               <DescriptionHeader>

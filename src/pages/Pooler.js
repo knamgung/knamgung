@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import NavigationBar from "../../components/Navbar.js";
 import styled from "styled-components";
-import heading from "../../images/Pooler/heading.png";
-import first from "../../images/Pooler/first.png";
-import final from "../../images/Pooler/final.png";
-import ideation from "../../images/Pooler/ideation.png";
-import "../../util/styleReset.css";
+import heading from "../images/Pooler/heading.png";
+import first from "../images/Pooler/first.png";
+import final from "../images/Pooler/final.png";
+import ideation from "../images/Pooler/ideation.png";
+import "../util/styleReset.css";
 
-import { colors } from "../../util/Colors";
+import { colors } from "../util/Colors";
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
 const MainPage = styled.main`
@@ -334,7 +333,6 @@ export default class Pooler extends Component {
     return (
       <>
         <MainPage>
-          <NavigationBar></NavigationBar>
           <SubtleDiv>
             <ProjectHeader>
               <DescriptionHeader>
